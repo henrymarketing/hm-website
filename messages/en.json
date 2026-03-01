@@ -1,0 +1,209 @@
+{
+  "nav": {
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Discuss a project"
+  },
+  "home": {
+    "hero": {
+      "h1": "One partner. Everything digital.",
+      "p": "I build digital infrastructure for Swiss and international companies. Website, marketing, design, AI, media — whatever you need to grow.",
+      "cta": "Discuss a project"
+    },
+    "problem": {
+      "intro": "Most companies need a few things from their digital setup:",
+      "lines": [
+        "A website that actually works. Marketing that reaches the right people. Technology that doesn't fight you.",
+        "And ideally: one person who understands all of it, so you don't have to coordinate four different vendors.",
+        "That's where I come in."
+      ]
+    },
+    "solution": {
+      "lines": [
+        "I'm Henry Barrows.",
+        "Over 20 years in digital — marketing, design, code, and business operations. I've built websites, run campaigns, launched ecommerce, and integrated AI into real workflows.",
+        "I speak marketing with founders and code with developers. I think in systems, deliver in results, and keep things simple.",
+        "One point of contact. From first conversation to finished product.",
+        "Let's build something that works."
+      ]
+    },
+    "capabilities": {
+      "label": "Services provided",
+      "1": { "title": "Marketing", "desc": "Positioning, strategy, campaigns", "anchor": "marketing" },
+      "2": { "title": "Technology", "desc": "Websites, ecommerce, design, AI, crypto", "anchor": "technology" },
+      "3": { "title": "Media", "desc": "Content, design, PR", "anchor": "media" },
+      "note": "Most projects need all three. Some just one. I adapt to you, not to my offering."
+    },
+    "for": {
+      "label": "Who it's for",
+      "items": [
+        "Founders who don't want to coordinate five people.",
+        "Established companies whose website is from 2019.",
+        "SMEs disappointed by Localsearch or Wix.",
+        "Premium brands that deserve a presence matching their quality.",
+        "Public figures looking to build media presence.",
+        "If you're thinking \"we really should...\" — it's time."
+      ]
+    },
+    "howItWorks": {
+      "label": "First steps",
+      "steps": [
+        { "title": "Conversation", "desc": "You tell me where you are and where you want to go. I listen and ask questions." },
+        { "title": "Diagnosis", "desc": "I assess your situation and tell you what you actually need." },
+        { "title": "Proposal", "desc": "Clear scope, fixed price, realistic timeline." },
+        { "title": "Execution", "desc": "I build. You give feedback. We refine until it's right." },
+        { "title": "Result", "desc": "It works. You grow. We stay in touch." }
+      ]
+    },
+    "pricing": {
+      "label": "Investment",
+      "cards": [
+        { "name": "Project", "price": "From CHF 4,000", "desc": "Website, ecommerce, strategy — defined goal, fixed price." },
+        { "name": "Monthly", "price": "From CHF 1,500", "desc": "Ongoing support, marketing, optimization." },
+        { "name": "Retainer", "price": "Custom", "desc": "Flexible budget, priority access." }
+      ],
+      "note": "No hourly rates. No surprises."
+    },
+    "cta": {
+      "h2": "Let's start.",
+      "p": "Get in touch. No strings attached.",
+      "cta": "Discuss a project"
+    }
+  },
+  "services": {
+    "hero": {
+      "h1": "What I build.",
+      "p": "Marketing. Technology. Media. Everything you need to grow digitally."
+    },
+    "intro": "A website without marketing is invisible. Marketing without technology is inefficient. Content without strategy is noise. I offer all three. You choose what you need.",
+    "introParts": ["A website without ", " is invisible. ", " without ", " is inefficient. ", " without strategy is noise. I offer all three. You choose what you need."],
+    "introTerms": { "marketing": "Marketing", "technology": "technology", "content": "Content" },
+    "marketing": {
+      "title": "Marketing",
+      "items": [
+        { "name": "Positioning", "desc": "Who you are, what you do, why it matters. Clarity before creativity." },
+        { "name": "Strategy", "desc": "Which channels, which messages, which goals. A plan, not guesswork." },
+        { "name": "Campaigns", "desc": "From idea to measurement. What works gets repeated." },
+        { "name": "Content Marketing", "desc": "Not posting for the sake of posting. Content that builds trust." }
+      ],
+      "for": "For: Founders who want clear positioning. Companies that need more than just a website. Brands that want to tell their story."
+    },
+    "technology": {
+      "title": "Technology",
+      "items": [
+        { "name": "Websites & ecommerce", "desc": "Modern, fast, converts. Built to your needs." },
+        { "name": "AI Integration", "desc": "Automate workflows, chatbots, content tools. Practical, not experimental." },
+        { "name": "Crypto Payments", "desc": "Bitcoin, stablecoins, modern payment rails. For forward-thinking companies." },
+        { "name": "API & Integrations", "desc": "Connect systems, let data flow. No silos." }
+      ],
+      "for": "For: Companies whose website should do more. Founders who want to use AI productively. Teams that need to connect their tools."
+    },
+    "media": {
+      "title": "Media",
+      "items": [
+        { "name": "Content Strategy", "desc": "What you say, how you say it, where it's heard." },
+        { "name": "Design & Visuals", "desc": "Visual identity, assets, and creative that fit your brand." },
+        { "name": "PR & Media", "desc": "The right story in the right place." },
+        { "name": "Social Media", "desc": "Content that strengthens your position. Strategic, not reactive." }
+      ],
+      "for": "For: Founders building expert visibility. Companies leveraging media attention. Public figures controlling their narrative."
+    },
+    "pricing": {
+      "label": "Investment",
+      "cards": [
+        { "name": "Project", "price": "From CHF 4,000", "desc": "Website, ecommerce, strategy — defined goal, fixed price." },
+        { "name": "Monthly", "price": "From CHF 1,500", "desc": "Ongoing support, marketing, optimization." },
+        { "name": "Retainer", "price": "Custom", "desc": "Flexible budget, priority access." }
+      ],
+      "note": "No hourly rates. No surprises."
+    },
+    "cta": {
+      "h2": "Let's start.",
+      "p": "Get in touch. No strings attached.",
+      "cta": "Discuss a project"
+    }
+  },
+  "about": {
+    "hero": {
+      "h1": "About me."
+    },
+    "bio": {
+      "tagline": "Marketing · design · technology · code",
+      "lines": [
+        "Henry Barrows. Swiss and international.",
+        "Over 20 years in digital — marketing, design, websites, ecommerce, and business operations. Self-employed for over a decade, mostly building behind the scenes for other people's brands.",
+        "I speak marketing with founders and code with developers. I design, I build, I deploy. One person, end to end.",
+        "Along the way I also earned an MSc in Blockchain & Digital Currencies — because I like understanding how things actually work, not just how people talk about them.",
+        "Now I'm combining all of that experience with AI to deliver better, faster results for clients.",
+        "Open to partnerships, advisory, and interesting conversations."
+      ]
+    },
+    "philosophy": {
+      "title": "Let's work together",
+      "items": [
+        "No bullshit. No buzzword bingo. I tell you what you need, not what costs the most.",
+        "I work directly with decision-makers. No account manager in between.",
+        "I deliver. Not decks, not concepts. Results."
+      ]
+    },
+    "cta": {
+      "h2": "Let's start.",
+      "p": "Get in touch. No strings attached.",
+      "cta": "Discuss a project"
+    }
+  },
+  "contact": {
+    "hero": {
+      "h1": "Let's talk."
+    },
+    "intro": "Tell me where you stand. I'll tell you what you need.",
+    "location": "Based in Zug, Switzerland. Working remotely with clients across Switzerland and internationally.",
+    "cta": "Discuss a project"
+  },
+  "footer": {
+    "tagline": "Marketing. Technology. Media. One partner."
+  },
+  "impressum": {
+    "title": "Impressum",
+    "publisher": "Publisher & contact",
+    "name": "Henry Barrows",
+    "business": "henry.marketing",
+    "address": "Zug, Switzerland",
+    "email": "henry@henry.marketing",
+    "phone": "079 175 20 20",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimer": "Content on this website is for general information only. No guarantee of completeness or accuracy. No liability for external links. No client relationship arises from visiting this site.",
+    "handelsregisterTitle": "Commercial register (source: SHAB)",
+    "entryDate": "12.05.2015",
+    "entryDateLabel": "Entry date",
+    "legalForm": "Sole proprietorship (Einzelfirma)",
+    "legalFormLabel": "Legal form",
+    "seat": "Zug",
+    "seatLabel": "Registered office",
+    "registerOffice": "ZG",
+    "registerOfficeLabel": "Register office",
+    "registerNumber": "CH-020.1.070.851-4",
+    "registerNumberLabel": "Register number",
+    "uid": "CHE-196.330.315",
+    "uidLabel": "VAT number (UID)",
+    "branch": "PR services",
+    "branchLabel": "Branch",
+    "purpose": "Provision of services and consulting in PR, marketing, advertising and IT; overall marketing organisation; trade in goods and related services.",
+    "purposeLabel": "Purpose"
+  },
+  "cookie": {
+    "message": "We use one cookie: to remember you said OK. No trackers, no ads.",
+    "accept": "OK"
+  },
+  "faq": {
+    "title": "FAQ",
+    "questions": [
+      { "q": "Who is this for?", "a": "Founders who don't want to coordinate five people. Established companies with an outdated website. SMEs disappointed by generic solutions. Premium brands that deserve a presence matching their quality. If you're thinking \"we really should...\" — it's time." },
+      { "q": "How does pricing work?", "a": "Project-based from CHF 4,000 (website, ecommerce, strategy). Monthly from CHF 1,500 for ongoing support. Retainer for flexible budget and priority access. No hourly rates, no surprises." },
+      { "q": "Where are you based?", "a": "Zug, Switzerland. I work remotely with clients across Switzerland and internationally." },
+      { "q": "What's the process?", "a": "We talk — you tell me where you are and where you want to go. I assess and propose: clear scope, fixed price, realistic timeline. Then I build; you give feedback; we refine until it's right." },
+      { "q": "Do you work remotely?", "a": "Yes. Most projects are delivered remotely. On-site workshops or shoots can be arranged when it adds value." }
+    ]
+  }
+}

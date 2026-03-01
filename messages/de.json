@@ -1,0 +1,209 @@
+{
+  "nav": {
+    "work": "Arbeit",
+    "about": "Über",
+    "contact": "Kontakt",
+    "cta": "Projekt besprechen"
+  },
+  "home": {
+    "hero": {
+      "h1": "Ein Partner. Alles digitale.",
+      "p": "Ich baue digitale Infrastruktur für Schweizer und internationale Unternehmen. Website, Marketing, Design, AI, Media — was Sie brauchen, um zu wachsen.",
+      "cta": "Projekt besprechen"
+    },
+    "problem": {
+      "intro": "Die meisten Unternehmen brauchen ein paar Dinge für ihr digitales Setup:",
+      "lines": [
+        "Eine Website, die wirklich funktioniert. Marketing, das die richtigen Leute erreicht. Technologie, die nicht gegen Sie arbeitet.",
+        "Und idealerweise: eine Person, die das alles versteht — damit Sie nicht vier verschiedene Dienstleister koordinieren müssen.",
+        "Genau hier komme ich ins Spiel."
+      ]
+    },
+    "solution": {
+      "lines": [
+        "Ich bin Henry Barrows.",
+        "Über 20 Jahre im Digitalen — Marketing, Design, Code und Geschäftsbetrieb. Ich habe Websites gebaut, Kampagnen geführt, E-Commerce lanciert und AI in echte Workflows integriert.",
+        "Ich spreche Marketing mit Gründern und Code mit Entwicklern. Ich denke in Systemen, liefere Ergebnisse und halte die Dinge einfach.",
+        "Ein Ansprechpartner. Vom ersten Gespräch bis zum fertigen Produkt.",
+        "Bauen wir etwas, das funktioniert."
+      ]
+    },
+    "capabilities": {
+      "label": "Leistungen",
+      "1": { "title": "Marketing", "desc": "Positionierung, Strategie, Kampagnen", "anchor": "marketing" },
+      "2": { "title": "Technology", "desc": "Websites, E-Commerce, Design, AI, Crypto", "anchor": "technology" },
+      "3": { "title": "Media", "desc": "Content, Design, PR", "anchor": "media" },
+      "note": "Die meisten Projekte brauchen alle drei. Manche nur einen. Ich richte mich nach Ihnen, nicht nach meinem Angebot."
+    },
+    "for": {
+      "label": "Für wen",
+      "items": [
+        "Gründer, die nicht fünf Leute koordinieren wollen.",
+        "Etablierte Unternehmen, deren Website von 2019 ist.",
+        "KMU, die von Localsearch oder Wix enttäuscht wurden.",
+        "Premium-Marken, die einen Auftritt verdienen, der zu ihnen passt.",
+        "Persönlichkeiten, die Medienpräsenz aufbauen wollen.",
+        "Wenn Sie \"eigentlich müssten wir mal...\" denken — dann ist es Zeit."
+      ]
+    },
+    "howItWorks": {
+      "label": "Erste Schritte",
+      "steps": [
+        { "title": "Gespräch", "desc": "Sie erzählen, wo Sie stehen und wo Sie hin wollen. Ich höre zu und frage nach." },
+        { "title": "Diagnose", "desc": "Ich schaue mir Ihre Situation an und sage Ihnen, was Sie wirklich brauchen." },
+        { "title": "Angebot", "desc": "Klarer Umfang, fester Preis, realistischer Zeitplan." },
+        { "title": "Umsetzung", "desc": "Ich baue. Sie geben Feedback. Wir verfeinern bis es passt." },
+        { "title": "Ergebnis", "desc": "Es funktioniert. Sie wachsen. Wir bleiben in Kontakt." }
+      ]
+    },
+    "pricing": {
+      "label": "Investition",
+      "cards": [
+        { "name": "Projekt", "price": "Ab CHF 4'000", "desc": "Website, E-Commerce, Strategie — definiertes Ziel, fester Preis." },
+        { "name": "Monatlich", "price": "Ab CHF 1'500", "desc": "Laufende Unterstützung, Marketing, Optimierung." },
+        { "name": "Retainer", "price": "Individuell", "desc": "Flexibles Budget, prioritärer Zugang." }
+      ],
+      "note": "Keine Stundensätze. Keine Überraschungen."
+    },
+    "cta": {
+      "h2": "Fangen wir an.",
+      "p": "Schreiben Sie mir. Unverbindlich.",
+      "cta": "Projekt besprechen"
+    }
+  },
+  "services": {
+    "hero": {
+      "h1": "Was ich baue.",
+      "p": "Marketing. Technology. Media. Alles was Sie brauchen, um digital zu wachsen."
+    },
+    "intro": "Eine Website ohne Marketing ist unsichtbar. Marketing ohne Technologie ist ineffizient. Content ohne Strategie ist Lärm. Ich biete alle drei. Sie wählen, was Sie brauchen.",
+    "introParts": ["Eine Website ohne ", " ist unsichtbar. ", " ohne ", " ist ineffizient. ", " ohne Strategie ist Lärm. Ich biete alle drei. Sie wählen, was Sie brauchen."],
+    "introTerms": { "marketing": "Marketing", "technology": "Technologie", "content": "Content" },
+    "marketing": {
+      "title": "Marketing",
+      "items": [
+        { "name": "Positionierung", "desc": "Wer Sie sind, was Sie tun, warum es jemanden interessiert. Klarheit vor Kreativität." },
+        { "name": "Strategie", "desc": "Welche Kanäle, welche Botschaften, welche Ziele. Ein Plan, kein Raten." },
+        { "name": "Kampagnen", "desc": "Von der Idee bis zur Messung. Was funktioniert, wird wiederholt." },
+        { "name": "Content-Marketing", "desc": "Nicht \"posten um des Postens willen.\" Inhalte, die Vertrauen aufbauen." }
+      ],
+      "for": "Für: Gründer, die klar positionieren wollen. Unternehmen, die mehr als nur eine Website brauchen. Marken, die ihre Geschichte erzählen möchten."
+    },
+    "technology": {
+      "title": "Technology",
+      "items": [
+        { "name": "Websites & E-Commerce", "desc": "Modern, schnell, konvertiert. Auf Ihre Bedürfnisse zugeschnitten." },
+        { "name": "AI-Integration", "desc": "Workflows automatisieren, Chatbots, Content-Tools. Praktisch eingesetzt, nicht experimentell." },
+        { "name": "Crypto-Payments", "desc": "Bitcoin, Stablecoins, moderne Zahlungswege. Für Unternehmen, die vorwärts denken." },
+        { "name": "API & Integrationen", "desc": "Systeme verbinden, Daten fliessen lassen. Keine Insellösungen." }
+      ],
+      "for": "Für: Unternehmen, deren Website mehr können sollte. Gründer, die AI produktiv einsetzen wollen. Teams, die ihre Tools verbinden müssen."
+    },
+    "media": {
+      "title": "Media",
+      "items": [
+        { "name": "Content-Strategie", "desc": "Was Sie sagen, wie Sie es sagen, wo es gehört wird." },
+        { "name": "Design & Visuals", "desc": "Visuelle Identität, Assets und Kreatives, das zu Ihrer Marke passt." },
+        { "name": "PR & Medienarbeit", "desc": "Die richtige Geschichte am richtigen Ort." },
+        { "name": "Social Media", "desc": "Inhalte, die Ihre Position stärken. Strategisch, nicht reaktiv." }
+      ],
+      "for": "Für: Gründer, die als Expert:innen sichtbar werden. Unternehmen, die Medienaufmerksamkeit nutzen. Persönlichkeiten, die ihre Geschichte kontrollieren."
+    },
+    "pricing": {
+      "label": "Investition",
+      "cards": [
+        { "name": "Projekt", "price": "Ab CHF 4'000", "desc": "Website, E-Commerce, Strategie — definiertes Ziel, fester Preis." },
+        { "name": "Monatlich", "price": "Ab CHF 1'500", "desc": "Laufende Unterstützung, Marketing, Optimierung." },
+        { "name": "Retainer", "price": "Individuell", "desc": "Flexibles Budget, prioritärer Zugang." }
+      ],
+      "note": "Keine Stundensätze. Keine Überraschungen."
+    },
+    "cta": {
+      "h2": "Fangen wir an.",
+      "p": "Schreiben Sie mir. Unverbindlich.",
+      "cta": "Projekt besprechen"
+    }
+  },
+  "about": {
+    "hero": {
+      "h1": "Kurz über mich."
+    },
+    "bio": {
+      "tagline": "Marketing · Design · Technologie · Code",
+      "lines": [
+        "Henry Barrows. Schweizer und international.",
+        "Über 20 Jahre im Digitalen — Marketing, Design, Websites, E-Commerce und Geschäftsbetrieb. Seit über einem Jahrzehnt selbstständig, meist im Hintergrund für die Marken anderer.",
+        "Ich spreche Marketing mit Gründern und Code mit Entwicklern. Ich designe, ich baue, ich liefere. Eine Person, von A bis Z.",
+        "Nebenbei habe ich einen MSc in Blockchain & Digital Currencies gemacht — weil ich gerne verstehe, wie Dinge wirklich funktionieren, nicht nur, wie man darüber redet.",
+        "Heute verbinde ich all diese Erfahrung mit AI, um bessere und schnellere Ergebnisse für Kunden zu liefern.",
+        "Offen für Partnerschaften, Beratung und interessante Gespräche."
+      ]
+    },
+    "philosophy": {
+      "title": "Lass uns zusammenarbeiten",
+      "items": [
+        "Kein Bullshit. Kein Buzzword-Bingo. Ich sage Ihnen, was Sie brauchen, nicht was am meisten kostet.",
+        "Ich arbeite direkt mit Entscheidern. Kein Account Manager dazwischen.",
+        "Ich liefere. Nicht Decks, nicht Konzepte. Ergebnisse."
+      ]
+    },
+    "cta": {
+      "h2": "Fangen wir an.",
+      "p": "Schreiben Sie mir. Unverbindlich.",
+      "cta": "Projekt besprechen"
+    }
+  },
+  "contact": {
+    "hero": {
+      "h1": "Lassen Sie uns reden."
+    },
+    "intro": "Erzählen Sie mir, wo Sie stehen. Ich sage Ihnen, was Sie brauchen.",
+    "location": "Zug, Schweiz. Arbeitet remote mit Kunden in der Schweiz und international.",
+    "cta": "Projekt besprechen"
+  },
+  "footer": {
+    "tagline": "Marketing. Technology. Media. Ein Partner."
+  },
+  "impressum": {
+    "title": "Impressum",
+    "publisher": "Herausgeber & Kontakt",
+    "name": "Henry Barrows",
+    "business": "henry.marketing",
+    "address": "Zug, Schweiz",
+    "email": "henry@henry.marketing",
+    "phone": "079 175 20 20",
+    "disclaimerTitle": "Haftungsausschluss",
+    "disclaimer": "Die Inhalte dieser Website dienen nur der allgemeinen Information. Kein Anspruch auf Vollständigkeit oder Richtigkeit. Keine Haftung für externe Links. Durch den Besuch dieser Website entsteht kein Mandatsverhältnis.",
+    "handelsregisterTitle": "Handelsregisterinformationen (Quelle: SHAB)",
+    "entryDate": "12.05.2015",
+    "entryDateLabel": "Eintrag ins Handelsregister",
+    "legalForm": "Einzelfirma",
+    "legalFormLabel": "Rechtsform",
+    "seat": "Zug",
+    "seatLabel": "Rechtssitz der Firma",
+    "registerOffice": "ZG",
+    "registerOfficeLabel": "Handelsregisteramt",
+    "registerNumber": "CH-020.1.070.851-4",
+    "registerNumberLabel": "Handelsregister-Nummer",
+    "uid": "CHE-196.330.315",
+    "uidLabel": "UID/MWST",
+    "branch": "Erbringung von PR-Dienstleistungen",
+    "branchLabel": "Branche",
+    "purpose": "Erbringung von Dienstleistungen sowie Durchführung von Beratungen in den Bereichen PR, Marketing, Werbung und EDV; Übernahme von Gesamtorganisationen im Marketingbereich; Handel mit Waren sowie Erbringung von Dienstleistungen in den vorgenannten Bereichen.",
+    "purposeLabel": "Firmenzweck"
+  },
+  "cookie": {
+    "message": "Wir verwenden ein Cookie: damit wir uns merken, dass Sie OK gesagt haben. Keine Tracker, keine Werbung.",
+    "accept": "OK"
+  },
+  "faq": {
+    "title": "FAQ",
+    "questions": [
+      { "q": "Für wen ist das?", "a": "Gründer, die nicht fünf Leute koordinieren wollen. Etablierte Unternehmen mit veralteter Website. KMU, die von Standardlösungen enttäuscht wurden. Premium-Marken, die einen Auftritt verdienen, der zu ihnen passt. Wenn Sie \"eigentlich müssten wir mal...\" denken — dann ist es Zeit." },
+      { "q": "Wie funktioniert die Preisgestaltung?", "a": "Projektbasiert ab CHF 4'000 (Website, E-Commerce, Strategie). Monatlich ab CHF 1'500 für laufende Unterstützung. Retainer für flexibles Budget und prioritären Zugang. Keine Stundensätze, keine Überraschungen." },
+      { "q": "Wo sind Sie ansässig?", "a": "Zug, Schweiz. Ich arbeite remote mit Kunden in der Schweiz und international." },
+      { "q": "Wie läuft der Prozess ab?", "a": "Wir reden — Sie erzählen, wo Sie stehen und wo Sie hin wollen. Ich schaue mir die Situation an und mache ein Angebot: klarer Umfang, fester Preis, realistischer Zeitplan. Dann baue ich; Sie geben Feedback; wir verfeinern bis es passt." },
+      { "q": "Arbeiten Sie remote?", "a": "Ja. Die meisten Projekte werden remote umgesetzt. Vor-Ort-Workshops oder Shootings können vereinbart werden, wenn es einen Mehrwert bringt." }
+    ]
+  }
+}
