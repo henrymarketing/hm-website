@@ -60,7 +60,7 @@
       "label": "Investition",
       "cards": [
         { "name": "Projekt", "price": "Ab CHF 4'000", "desc": "Website, E-Commerce, Strategie — definiertes Ziel, fester Preis." },
-        { "name": "Monatlich", "price": "Ab CHF 1'500", "desc": "Laufende Unterstützung, Marketing, Optimierung." },
+        { "name": "Jährlich (Einstieg)", "price": "Ab CHF 1'400", "desc": "Laufende Unterstützung, Marketing, Optimierung. Jährliche Abrechnung." },
         { "name": "Retainer", "price": "Individuell", "desc": "Flexibles Budget, prioritärer Zugang." }
       ],
       "note": "Keine Stundensätze. Keine Überraschungen."
@@ -113,7 +113,7 @@
       "label": "Investition",
       "cards": [
         { "name": "Projekt", "price": "Ab CHF 4'000", "desc": "Website, E-Commerce, Strategie — definiertes Ziel, fester Preis." },
-        { "name": "Monatlich", "price": "Ab CHF 1'500", "desc": "Laufende Unterstützung, Marketing, Optimierung." },
+        { "name": "Jährlich (Einstieg)", "price": "Ab CHF 1'400", "desc": "Laufende Unterstützung, Marketing, Optimierung. Jährliche Abrechnung." },
         { "name": "Retainer", "price": "Individuell", "desc": "Flexibles Budget, prioritärer Zugang." }
       ],
       "note": "Keine Stundensätze. Keine Überraschungen."
@@ -200,7 +200,7 @@
     "title": "FAQ",
     "questions": [
       { "q": "Für wen ist das?", "a": "Gründer, die nicht fünf Leute koordinieren wollen. Etablierte Unternehmen mit veralteter Website. KMU, die von Standardlösungen enttäuscht wurden. Premium-Marken, die einen Auftritt verdienen, der zu ihnen passt. Wenn Sie \"eigentlich müssten wir mal...\" denken — dann ist es Zeit." },
-      { "q": "Wie funktioniert die Preisgestaltung?", "a": "Projektbasiert ab CHF 4'000 (Website, E-Commerce, Strategie). Monatlich ab CHF 1'500 für laufende Unterstützung. Retainer für flexibles Budget und prioritären Zugang. Keine Stundensätze, keine Überraschungen." },
+      { "q": "Wie funktioniert die Preisgestaltung?", "a": "Projektbasiert ab CHF 4'000 (Website, E-Commerce, Strategie). Ab CHF 1'400 jährlich (Einstieg) für laufende Unterstützung. Retainer für flexibles Budget und prioritären Zugang. Keine Stundensätze, keine Überraschungen." },
       { "q": "Wo sind Sie ansässig?", "a": "Zug, Schweiz. Ich arbeite remote mit Kunden in der Schweiz und international." },
       { "q": "Wie läuft der Prozess ab?", "a": "Wir reden — Sie erzählen, wo Sie stehen und wo Sie hin wollen. Ich schaue mir die Situation an und mache ein Angebot: klarer Umfang, fester Preis, realistischer Zeitplan. Dann baue ich; Sie geben Feedback; wir verfeinern bis es passt." },
       { "q": "Arbeiten Sie remote?", "a": "Ja. Die meisten Projekte werden remote umgesetzt. Vor-Ort-Workshops oder Shootings können vereinbart werden, wenn es einen Mehrwert bringt." }

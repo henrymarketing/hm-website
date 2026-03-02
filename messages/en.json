@@ -60,7 +60,7 @@
       "label": "Investment",
       "cards": [
         { "name": "Project", "price": "From CHF 4,000", "desc": "Website, ecommerce, strategy — defined goal, fixed price." },
-        { "name": "Monthly", "price": "From CHF 1,500", "desc": "Ongoing support, marketing, optimization." },
+        { "name": "Annually (starting)", "price": "From CHF 1,400", "desc": "Ongoing support, marketing, optimization. Billed annually." },
         { "name": "Retainer", "price": "Custom", "desc": "Flexible budget, priority access." }
       ],
       "note": "No hourly rates. No surprises."
@@ -78,7 +78,7 @@
     },
     "intro": "A website without marketing is invisible. Marketing without technology is inefficient. Content without strategy is noise. I offer all three. You choose what you need.",
     "introParts": ["A website without ", " is invisible. ", " without ", " is inefficient. ", " without strategy is noise. I offer all three. You choose what you need."],
-    "introTerms": { "marketing": "Marketing", "technology": "technology", "content": "Content" },
+    "introTerms": { "marketing": "Marketing", "technology": "Technology", "content": "Content" },
     "marketing": {
       "title": "Marketing",
       "items": [
@@ -113,7 +113,7 @@
       "label": "Investment",
       "cards": [
         { "name": "Project", "price": "From CHF 4,000", "desc": "Website, ecommerce, strategy — defined goal, fixed price." },
-        { "name": "Monthly", "price": "From CHF 1,500", "desc": "Ongoing support, marketing, optimization." },
+        { "name": "Annually (starting)", "price": "From CHF 1,400", "desc": "Ongoing support, marketing, optimization. Billed annually." },
         { "name": "Retainer", "price": "Custom", "desc": "Flexible budget, priority access." }
       ],
       "note": "No hourly rates. No surprises."
@@ -200,7 +200,7 @@
     "title": "FAQ",
     "questions": [
       { "q": "Who is this for?", "a": "Founders who don't want to coordinate five people. Established companies with an outdated website. SMEs disappointed by generic solutions. Premium brands that deserve a presence matching their quality. If you're thinking \"we really should...\" — it's time." },
-      { "q": "How does pricing work?", "a": "Project-based from CHF 4,000 (website, ecommerce, strategy). Monthly from CHF 1,500 for ongoing support. Retainer for flexible budget and priority access. No hourly rates, no surprises." },
+      { "q": "How does pricing work?", "a": "Project-based from CHF 4,000 (website, ecommerce, strategy). From CHF 1,400 annually (starting) for ongoing support. Retainer for flexible budget and priority access. No hourly rates, no surprises." },
       { "q": "Where are you based?", "a": "Zug, Switzerland. I work remotely with clients across Switzerland and internationally." },
       { "q": "What's the process?", "a": "We talk — you tell me where you are and where you want to go. I assess and propose: clear scope, fixed price, realistic timeline. Then I build; you give feedback; we refine until it's right." },
       { "q": "Do you work remotely?", "a": "Yes. Most projects are delivered remotely. On-site workshops or shoots can be arranged when it adds value." }

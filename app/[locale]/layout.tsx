@@ -41,7 +41,7 @@ const jsonLdProfessionalService = {
   },
   areaServed: { '@type': 'Country', name: 'Switzerland' },
   availableLanguage: ['de', 'en'],
-  priceRange: 'CHF 1500+',
+  priceRange: 'CHF 1400+',
 };
 
 const jsonLdWebSite = {
