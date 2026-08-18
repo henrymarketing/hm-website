@@ -107,7 +107,7 @@ export async function POST(request: Request) {
       const err = await veniceRes.text();
       console.error('[voice/refine] Venice error:', err);
       return NextResponse.json(
-        { error: 'AI refinement failed' },
+        { error: 'AI refinement failed', detail: err },
         { status: 502 }
       );
     }
