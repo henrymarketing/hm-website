@@ -92,7 +92,7 @@ export async function POST(request: Request) {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: 'glm-5.2',
+          model: 'zai-org-glm-5-2',
           messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: rawText.trim() },
