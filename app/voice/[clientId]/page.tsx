@@ -34,22 +34,18 @@ export default function VoiceMailPage({
   const [phase, setPhase] = useState<Phase>('loading');
   const [errorMsg, setErrorMsg] = useState('');
 
-  // Dictation state
   const [rawText, setRawText] = useState('');
   const [interimText, setInterimText] = useState('');
 
-  // Email state
   const [recipient, setRecipient] = useState('');
   const [subject, setSubject] = useState('');
   const [body, setBody] = useState('');
-
-  // Copy button feedback
   const [copied, setCopied] = useState(false);
 
   const recognitionRef = useRef<any>(null);
   const isRecordingRef = useRef(false);
+  const hasSR = useRef(false);
 
-  // Load client config
   useEffect(() => {
     fetch(`/api/voice/config?clientId=${clientId}`)
       .then((res) => {
@@ -61,28 +57,18 @@ export default function VoiceMailPage({
         setPhase('idle');
       })
       .catch(() => {
-        setErrorMsg(
-          'Dieser Link ist ungültig. Bitte kontaktieren Sie henry@henry.marketing.'
-        );
+        setErrorMsg('Invalid link. Contact henry@henry.marketing.');
         setPhase('error');
       });
   }, [clientId]);
 
-  // Init speech recognition once config is loaded
   useEffect(() => {
     if (!config) return;
-
     const SR =
       (window as any).SpeechRecognition ||
       (window as any).webkitSpeechRecognition;
-
-    if (!SR) {
-      setErrorMsg(
-        'Ihr Browser unterstützt keine Spracherkennung. Bitte Chrome oder Edge verwenden.'
-      );
-      setPhase('error');
-      return;
-    }
+    if (!SR) return;
+    hasSR.current = true;
 
     const rec = new SR();
     rec.lang = config.default_language;
@@ -94,11 +80,8 @@ export default function VoiceMailPage({
       let interim = '';
       for (let i = event.resultIndex; i < event.results.length; i++) {
         const t = event.results[i][0].transcript;
-        if (event.results[i].isFinal) {
-          finalChunk += t;
-        } else {
-          interim += t;
-        }
+        if (event.results[i].isFinal) finalChunk += t;
+        else interim += t;
       }
       if (finalChunk) {
         setRawText((prev) => (prev ? prev + ' ' + finalChunk : finalChunk));
@@ -109,22 +92,15 @@ export default function VoiceMailPage({
     rec.onerror = (event: any) => {
       if (event.error === 'no-speech') return;
       if (event.error === 'not-allowed') {
-        setErrorMsg(
-          'Mikrofon-Zugriff verweigert. Bitte erlauben Sie den Zugriff in den Browser-Einstellungen.'
-        );
-        setPhase('error');
+        setErrorMsg('Microphone access denied. Allow it in browser settings.');
         isRecordingRef.current = false;
+        setPhase('idle');
       }
     };
 
-    // Chrome stops after ~60s — auto-restart if still recording
     rec.onend = () => {
       if (isRecordingRef.current) {
-        try {
-          rec.start();
-        } catch {
-          // already started
-        }
+        try { rec.start(); } catch {}
       } else {
         setInterimText('');
       }
@@ -136,13 +112,8 @@ export default function VoiceMailPage({
   const startRecording = useCallback(() => {
     if (!recognitionRef.current) return;
     isRecordingRef.current = true;
-    setRawText('');
     setInterimText('');
-    try {
-      recognitionRef.current.start();
-    } catch {
-      // already running
-    }
+    try { recognitionRef.current.start(); } catch {}
     setPhase('recording');
   }, []);
 
@@ -152,14 +123,25 @@ export default function VoiceMailPage({
     setPhase('idle');
   }, []);
 
-  const refine = useCallback(async () => {
-    if (!rawText.trim()) return;
+  const submit = useCallback(async () => {
+    // Capture interim text if recording
+    let text = rawText;
+    if (phase === 'recording') {
+      isRecordingRef.current = false;
+      recognitionRef.current?.stop();
+      if (interimText) {
+        text = rawText ? rawText + ' ' + interimText : interimText;
+        setRawText(text);
+        setInterimText('');
+      }
+    }
+    if (!text.trim()) return;
     setPhase('refining');
     try {
       const res = await fetch('/api/voice/refine', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ clientId, rawText: rawText.trim(), recipient, subject }),
+        body: JSON.stringify({ clientId, rawText: text.trim(), recipient, subject }),
       });
       if (!res.ok) throw new Error('refine_failed');
       const data = await res.json();
@@ -167,10 +149,10 @@ export default function VoiceMailPage({
       if (data.subject) setSubject(data.subject);
       setPhase('preview');
     } catch {
-      setErrorMsg('Verarbeitung fehlgeschlagen. Bitte versuchen Sie es erneut.');
+      setErrorMsg('Processing failed. Please try again.');
       setPhase('idle');
     }
-  }, [clientId, rawText, recipient, subject]);
+  }, [clientId, rawText, interimText, recipient, subject, phase]);
 
   const send = useCallback(async () => {
     setPhase('sending');
@@ -184,15 +166,16 @@ export default function VoiceMailPage({
       setPhase('sent');
       setTimeout(reset, 3000);
     } catch {
-      setErrorMsg('Senden fehlgeschlagen. Prüfen Sie die Empfängeradresse.');
+      setErrorMsg('Send failed. Check the recipient address.');
       setPhase('preview');
     }
   }, [clientId, recipient, subject, body]);
 
   const copyToClipboard = useCallback(async () => {
-    const fullText = config?.is_general || !config?.signature
-      ? body
-      : `${body}\n\n${config.signature}`;
+    const fullText =
+      config?.is_general || !config?.signature
+        ? body
+        : `${body}\n\n${config.signature}`;
     await navigator.clipboard.writeText(fullText);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -208,208 +191,156 @@ export default function VoiceMailPage({
     setSubject('');
     setBody('');
     setErrorMsg('');
+    setCopied(false);
   }, []);
 
   const accent = config?.accent_color ?? '#1a3a5c';
+  const isGeneral = config?.is_general ?? false;
 
-  // ── Loading ──────────────────────────────────────────────────────────────
   if (phase === 'loading') {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div
-          className="w-8 h-8 rounded-full border-2 border-gray-200 animate-spin"
+          className="w-5 h-5 rounded-full border-2 border-gray-100 animate-spin"
           style={{ borderTopColor: accent }}
         />
       </div>
     );
   }
 
-  // ── Error ────────────────────────────────────────────────────────────────
   if (phase === 'error') {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white px-6">
-        <div className="max-w-sm text-center">
-          <p className="text-gray-500 text-sm">{errorMsg}</p>
-        </div>
+        <p className="text-gray-400 text-sm text-center max-w-xs">{errorMsg}</p>
       </div>
     );
   }
 
-  // ── App shell ────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-xl mx-auto flex items-center justify-between">
-          <span className="font-medium text-gray-900 text-sm">
+      <header className="border-b border-gray-100 px-6 py-4 shrink-0">
+        <div className="max-w-2xl mx-auto flex items-center justify-between">
+          <span className="text-sm font-medium text-gray-900">
             {config?.company_name}
           </span>
-          <span className="text-xs text-gray-400 tracking-wide uppercase">
-            Voice Mail
+          <span className="text-[11px] tracking-widest text-gray-300 uppercase">
+            Voice
           </span>
         </div>
       </header>
 
-      <main className="flex-1 max-w-xl mx-auto w-full px-6 py-10">
+      <main className="flex-1 max-w-2xl mx-auto w-full px-6 flex flex-col py-8 gap-5">
 
-        {/* ── Idle / Recording ── */}
-        {(phase === 'idle' || phase === 'recording') && (
-          <div className="flex flex-col items-center gap-8">
-            {/* Mic button */}
-            <button
-              onClick={phase === 'recording' ? stopRecording : startRecording}
-              className="w-32 h-32 rounded-full flex items-center justify-center transition-transform active:scale-95 focus:outline-none"
-              style={{
-                backgroundColor: phase === 'recording' ? '#ef4444' : accent,
-                animation: phase === 'recording' ? 'pulse 1.5s infinite' : 'none',
-              }}
-              aria-label={phase === 'recording' ? 'Aufnahme stoppen' : 'Aufnahme starten'}
-            >
-              {phase === 'recording' ? (
-                // Stop icon
-                <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <rect x="6" y="6" width="12" height="12" rx="2" />
-                </svg>
-              ) : (
-                // Mic icon
-                <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 1a4 4 0 0 1 4 4v7a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm-1 18.93V22h2v-2.07A8.001 8.001 0 0 0 20 12h-2a6 6 0 0 1-12 0H4a8.001 8.001 0 0 0 7 7.93z" />
-                </svg>
-              )}
-            </button>
-
-            <p className="text-gray-500 text-center text-sm leading-relaxed">
-              {phase === 'recording'
-                ? (config?.is_general ? 'Listening…' : 'Sprechen Sie jetzt…')
-                : (config?.is_general ? 'Tap the mic and speak.' : 'Tippen Sie auf das Mikrofon und diktieren Sie Ihre E-Mail.')}
-            </p>
-
-            {/* Live transcript */}
-            {(rawText || interimText) && (
-              <div className="w-full bg-gray-50 rounded-xl border border-gray-200 p-5 min-h-[120px]">
-                <p className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
-                  {rawText}
-                  <span className="text-gray-400">{interimText ? ' ' + interimText : ''}</span>
-                </p>
-              </div>
-            )}
-
-            {errorMsg && phase === 'idle' && (
-              <p className="text-red-500 text-sm text-center">{errorMsg}</p>
-            )}
-
-            {/* Action buttons — shown when there's text and not recording */}
-            {rawText && phase === 'idle' && (
-              <div className="flex flex-col sm:flex-row gap-3 w-full">
-                <button
-                  onClick={refine}
-                  className="flex-1 py-3 px-6 rounded-xl text-white font-medium text-sm transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: accent }}
-                >
-                  {config?.is_general ? 'Ask AI' : 'E-Mail formulieren'}
-                </button>
-                <button
-                  onClick={reset}
-                  className="py-3 px-6 rounded-xl border border-gray-200 text-gray-600 text-sm hover:bg-gray-50"
-                >
-                  Neu starten
-                </button>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* ── Refining ── */}
-        {phase === 'refining' && (
-          <div className="flex flex-col items-center gap-6 py-20">
+        {/* ── Spinners ── */}
+        {(phase === 'refining' || phase === 'sending') && (
+          <div className="flex-1 flex flex-col items-center justify-center gap-3">
             <div
-              className="w-10 h-10 rounded-full border-2 border-gray-200 animate-spin"
+              className="w-7 h-7 rounded-full border-2 border-gray-100 animate-spin"
               style={{ borderTopColor: accent }}
             />
-            <p className="text-gray-500 text-sm">Ihre E-Mail wird formuliert…</p>
+            <p className="text-gray-400 text-sm">
+              {phase === 'sending'
+                ? 'Sending…'
+                : isGeneral
+                ? 'Thinking…'
+                : 'Wird formuliert…'}
+            </p>
           </div>
         )}
 
-        {/* ── Preview ── */}
-        {phase === 'preview' && config?.is_general ? (
-          // General mode: just show the response, no email framing
-          <div className="space-y-5">
-            {errorMsg && (
-              <p className="text-red-500 text-sm">{errorMsg}</p>
-            )}
-            <textarea
-              value={body}
-              onChange={(e) => setBody(e.target.value)}
-              rows={14}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm leading-relaxed focus:outline-none focus:ring-2 focus:border-transparent resize-none"
-              style={{ '--tw-ring-color': accent } as any}
-            />
-            <div className="flex gap-3 pt-1">
+        {/* ── Sent ── */}
+        {phase === 'sent' && (
+          <div className="flex-1 flex flex-col items-center justify-center gap-3">
+            <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center">
+              <svg
+                className="w-6 h-6 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p className="text-gray-500 text-sm">Sent.</p>
+          </div>
+        )}
+
+        {/* ── General preview (response card) ── */}
+        {phase === 'preview' && isGeneral && (
+          <>
+            <div className="flex-1 rounded-2xl border border-gray-100 bg-gray-50 p-5 flex flex-col">
+              <textarea
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
+                className="flex-1 w-full bg-transparent text-gray-800 text-sm leading-relaxed resize-none focus:outline-none min-h-[200px]"
+              />
+            </div>
+            {errorMsg && <p className="text-red-400 text-xs">{errorMsg}</p>}
+            <div className="flex gap-2.5 shrink-0">
               <button
                 onClick={copyToClipboard}
-                className="flex-1 py-3 px-6 rounded-xl text-white font-medium text-sm transition-opacity hover:opacity-90"
+                className="flex-1 py-2.5 px-5 rounded-xl text-white text-sm font-medium transition-opacity hover:opacity-90"
                 style={{ backgroundColor: accent }}
               >
                 {copied ? 'Copied ✓' : 'Copy'}
               </button>
               <button
-                onClick={() => { setErrorMsg(''); setPhase('idle'); }}
-                className="py-3 px-6 rounded-xl border border-gray-200 text-gray-500 text-sm hover:bg-gray-50"
+                onClick={reset}
+                className="py-2.5 px-5 rounded-xl border border-gray-200 text-gray-500 text-sm hover:bg-gray-50"
               >
-                Back
+                New
               </button>
             </div>
-          </div>
-        ) : phase === 'preview' && (
-          // Email mode: full email fields
-          <div className="space-y-5">
+          </>
+        )}
+
+        {/* ── Email preview ── */}
+        {phase === 'preview' && !isGeneral && (
+          <div className="flex-1 flex flex-col gap-4">
             <div>
-              <h2 className="text-lg font-medium text-gray-900 mb-1">Ihre E-Mail</h2>
-              <p className="text-xs text-gray-400">Prüfen und bearbeiten Sie vor dem Senden.</p>
+              <h2 className="text-base font-medium text-gray-900">Ihre E-Mail</h2>
+              <p className="text-xs text-gray-400 mt-0.5">
+                Prüfen und bearbeiten Sie vor dem Senden.
+              </p>
             </div>
-
-            {errorMsg && (
-              <p className="text-red-500 text-sm">{errorMsg}</p>
-            )}
-
+            {errorMsg && <p className="text-red-400 text-xs">{errorMsg}</p>}
             <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1.5 uppercase tracking-wide">
+              <label className="block text-[10px] font-semibold text-gray-400 mb-1.5 uppercase tracking-widest">
                 An
               </label>
               <input
                 type="email"
                 value={recipient}
                 onChange={(e) => setRecipient(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:border-transparent"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:border-transparent"
                 style={{ '--tw-ring-color': accent } as any}
                 placeholder="empfaenger@beispiel.ch"
                 autoComplete="email"
               />
             </div>
-
             <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1.5 uppercase tracking-wide">
+              <label className="block text-[10px] font-semibold text-gray-400 mb-1.5 uppercase tracking-widest">
                 Betreff
               </label>
               <input
                 type="text"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:border-transparent"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:border-transparent"
                 style={{ '--tw-ring-color': accent } as any}
                 placeholder="Betreff"
               />
             </div>
-
-            <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1.5 uppercase tracking-wide">
+            <div className="flex-1 flex flex-col">
+              <label className="block text-[10px] font-semibold text-gray-400 mb-1.5 uppercase tracking-widest">
                 Inhalt
               </label>
               <textarea
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
-                rows={10}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm leading-relaxed focus:outline-none focus:ring-2 focus:border-transparent font-mono resize-none"
+                className="flex-1 w-full px-4 py-3 border border-gray-200 rounded-xl text-sm leading-relaxed focus:outline-none focus:ring-2 focus:border-transparent font-mono resize-none min-h-[180px]"
                 style={{ '--tw-ring-color': accent } as any}
               />
               {config?.signature && (
@@ -418,13 +349,12 @@ export default function VoiceMailPage({
                 </p>
               )}
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <div className="flex gap-2.5 shrink-0">
               {config?.has_smtp && (
                 <button
                   onClick={send}
                   disabled={!recipient.trim()}
-                  className="flex-1 py-3 px-6 rounded-xl text-white font-medium text-sm transition-opacity hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="flex-1 py-2.5 px-5 rounded-xl text-white font-medium text-sm transition-opacity hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed"
                   style={{ backgroundColor: accent }}
                 >
                   Senden
@@ -432,13 +362,13 @@ export default function VoiceMailPage({
               )}
               <button
                 onClick={copyToClipboard}
-                className="flex-1 py-3 px-6 rounded-xl border border-gray-200 text-gray-700 text-sm hover:bg-gray-50 min-w-[100px]"
+                className="flex-1 py-2.5 px-5 rounded-xl border border-gray-200 text-gray-700 text-sm hover:bg-gray-50"
               >
                 {copied ? 'Kopiert ✓' : 'Kopieren'}
               </button>
               <button
                 onClick={() => { setErrorMsg(''); setPhase('idle'); }}
-                className="py-3 px-6 rounded-xl border border-gray-200 text-gray-500 text-sm hover:bg-gray-50"
+                className="py-2.5 px-5 rounded-xl border border-gray-200 text-gray-500 text-sm hover:bg-gray-50"
               >
                 Zurück
               </button>
@@ -446,26 +376,79 @@ export default function VoiceMailPage({
           </div>
         )}
 
-        {/* ── Sending ── */}
-        {phase === 'sending' && (
-          <div className="flex flex-col items-center gap-6 py-20">
-            <div
-              className="w-10 h-10 rounded-full border-2 border-gray-200 animate-spin"
-              style={{ borderTopColor: accent }}
-            />
-            <p className="text-gray-500 text-sm">E-Mail wird gesendet…</p>
-          </div>
-        )}
+        {/* ── Input area (idle + recording) ── */}
+        {(phase === 'idle' || phase === 'recording') && (
+          <div className="flex-1 flex flex-col justify-end gap-3">
+            {errorMsg && (
+              <p className="text-red-400 text-xs text-center">{errorMsg}</p>
+            )}
 
-        {/* ── Sent ── */}
-        {phase === 'sent' && (
-          <div className="flex flex-col items-center gap-4 py-20">
-            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
+            <div className="rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+              {/* Textarea */}
+              <textarea
+                value={rawText}
+                onChange={(e) => setRawText(e.target.value)}
+                rows={7}
+                placeholder={
+                  isGeneral
+                    ? 'Type or speak…'
+                    : 'Tippen oder diktieren Sie Ihre E-Mail…'
+                }
+                className="w-full px-5 pt-4 pb-2 text-sm leading-relaxed text-gray-800 placeholder-gray-300 focus:outline-none resize-none"
+              />
+
+              {/* Interim text from mic */}
+              {interimText && (
+                <p className="px-5 pb-2 text-sm text-gray-300 italic leading-relaxed">
+                  {interimText}
+                </p>
+              )}
+
+              {/* Toolbar */}
+              <div className="flex items-center justify-between px-4 py-3 border-t border-gray-100 bg-gray-50/60">
+                {/* Mic button */}
+                <button
+                  onClick={phase === 'recording' ? stopRecording : startRecording}
+                  className={`flex items-center gap-2 py-1.5 px-3 rounded-lg text-xs font-medium transition-colors ${
+                    phase === 'recording'
+                      ? 'text-red-500 bg-red-50'
+                      : 'text-gray-400 hover:text-gray-600 hover:bg-gray-100'
+                  }`}
+                  aria-label={phase === 'recording' ? 'Stop recording' : 'Start recording'}
+                >
+                  <span
+                    className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                      phase === 'recording'
+                        ? 'bg-red-500 animate-pulse'
+                        : 'bg-gray-300'
+                    }`}
+                  />
+                  {phase === 'recording'
+                    ? isGeneral ? 'Stop' : 'Stopp'
+                    : isGeneral ? 'Dictate' : 'Diktieren'}
+                </button>
+
+                {/* Right actions */}
+                <div className="flex items-center gap-2">
+                  {rawText && (
+                    <button
+                      onClick={reset}
+                      className="text-xs text-gray-300 hover:text-gray-500 py-1.5 px-2 transition-colors"
+                    >
+                      {isGeneral ? 'Clear' : 'Leeren'}
+                    </button>
+                  )}
+                  <button
+                    onClick={submit}
+                    disabled={!rawText.trim() && !interimText.trim()}
+                    className="py-1.5 px-4 rounded-lg text-white text-xs font-medium transition-opacity hover:opacity-90 disabled:opacity-25 disabled:cursor-not-allowed"
+                    style={{ backgroundColor: accent }}
+                  >
+                    {isGeneral ? 'Ask AI' : 'Formulieren →'}
+                  </button>
+                </div>
+              </div>
             </div>
-            <p className="text-gray-800 font-medium">E-Mail gesendet.</p>
           </div>
         )}
 
@@ -474,7 +457,7 @@ export default function VoiceMailPage({
       <style>{`
         @keyframes pulse {
           0%, 100% { opacity: 1; }
-          50% { opacity: 0.75; }
+          50% { opacity: 0.3; }
         }
       `}</style>
     </div>
