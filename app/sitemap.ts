@@ -6,7 +6,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   return [
-    // Homepages
     {
       url: `${BASE}/de`,
       lastModified: now,
@@ -20,7 +19,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
-    // Services
+    {
+      url: `${BASE}/de/work`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          de: `${BASE}/de/work`,
+          en: `${BASE}/en/work`,
+          'x-default': `${BASE}/de/work`,
+        },
+      },
+    },
     {
       url: `${BASE}/de/services`,
       lastModified: now,
@@ -34,7 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
-    // About
     {
       url: `${BASE}/de/ueber`,
       lastModified: now,
@@ -48,7 +58,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
-    // Contact
     {
       url: `${BASE}/de/kontakt`,
       lastModified: now,
@@ -59,34 +68,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
           de: `${BASE}/de/kontakt`,
           en: `${BASE}/en/contact`,
           'x-default': `${BASE}/de/kontakt`,
-        },
-      },
-    },
-    // Impressum
-    {
-      url: `${BASE}/de/impressum`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-      alternates: {
-        languages: {
-          de: `${BASE}/de/impressum`,
-          en: `${BASE}/en/impressum`,
-          'x-default': `${BASE}/de/impressum`,
-        },
-      },
-    },
-    // FAQ
-    {
-      url: `${BASE}/de/faq`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-      alternates: {
-        languages: {
-          de: `${BASE}/de/faq`,
-          en: `${BASE}/en/faq`,
-          'x-default': `${BASE}/de/faq`,
         },
       },
     },

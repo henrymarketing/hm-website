@@ -1,209 +1,368 @@
 {
   "nav": {
     "work": "Arbeit",
+    "services": "Leistungen",
     "about": "Über",
     "contact": "Kontakt",
-    "cta": "Projekt besprechen"
+    "cta": "Projekt anfragen"
+  },
+  "cookie": {
+    "message": "Wir verwenden ein einziges Cookie — damit die Spracheinstellung bleibt. Keine Tracker, keine Werbung.",
+    "dismiss": "Verstanden"
+  },
+  "form": {
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Was brauchen Sie?",
+    "submit": "Absenden",
+    "sending": "Wird gesendet…",
+    "success": "Danke. Sie hören innerhalb eines Werktags von mir.",
+    "error": "Etwas ist schiefgelaufen. Schreiben Sie mir direkt an henry@henry.marketing.",
+    "secondary": "Oder direkt:",
+    "phone": "079 175 20 20"
   },
   "home": {
+    "meta": {
+      "title": "henry.marketing — Websites und digitales Marketing",
+      "description": "Ein Partner für Strategie, Design, Code und Launch. Websites und Marketing für Schweizer KMU und Praxen — ohne Agentur-Overhead."
+    },
     "hero": {
-      "h1": "Ein Partner. Alles digitale.",
-      "p": "Ich baue digitale Infrastruktur für Schweizer und internationale Unternehmen. Website, Marketing, Design, AI, Media — was Sie brauchen, um zu wachsen.",
-      "cta": "Projekt besprechen"
+      "h1": "Websites und digitales Marketing für Unternehmen mit Anspruch.",
+      "p": "Ein Partner für alles: Strategie, Design, Code, Launch. Kein Agentur-Overhead, keine Account Manager, keine Stundenabrechnung mit Überraschungen.",
+      "ctaPrimary": "Arbeiten ansehen",
+      "ctaSecondary": "Projekt anfragen"
     },
-    "problem": {
-      "intro": "Die meisten Unternehmen brauchen ein paar Dinge für ihr digitales Setup:",
-      "lines": [
-        "Eine Website, die wirklich funktioniert. Marketing, das die richtigen Leute erreicht. Technologie, die nicht gegen Sie arbeitet.",
-        "Und idealerweise: eine Person, die das alles versteht — damit Sie nicht vier verschiedene Dienstleister koordinieren müssen.",
-        "Genau hier komme ich ins Spiel."
+    "trust": {
+      "label": "Aktuelle Arbeiten",
+      "items": "Pietrobon & Michel, Zürich · André Wicki, Stadtpräsident Zug · Dr. Obrenovic, Erlenbach · Dr. Neumann, Schaffhausen · Schlafzahnmedizin Schaffhausen · GreenAir (Launch 2026)"
+    },
+    "positioning": {
+      "h2": "Eine Person. Alles Digitale.",
+      "p1": "Ich bin Henry Barrows — Marketer und Entwickler in einer Person. Ich spreche Marketing mit Gründern und Code mit Entwicklern.",
+      "p2": "Das heisst für Sie: keine Übersetzungsverluste zwischen Konzept und Umsetzung, kein Projektleiter dazwischen, keine Ausreden. Sie sprechen mit der Person, die Ihre Website tatsächlich baut."
+    },
+    "featured": {
+      "h2": "Ausgewählte Arbeiten",
+      "link": "Alle Arbeiten ansehen",
+      "cards": [
+        {
+          "title": "Schlafzahnmedizin Schaffhausen",
+          "desc": "Eine eigene Website für eine Spezialisierung — Patientengewinnung mit eigener Adresse statt versteckter Unterseite.",
+          "slug": "schlafzahnmedizin"
+        },
+        {
+          "title": "André Wicki — Wiederwahl 2026",
+          "desc": "Kampagnen-Website für den Stadtpräsidenten von Zug. Fixer Termin, null Toleranz für Fehler.",
+          "slug": "wicki"
+        },
+        {
+          "title": "Pietrobon & Michel, Zürich",
+          "desc": "Dentallabor an der Bahnhofstrasse. Viersprachig, auf dem Niveau der Adresse.",
+          "slug": "pietrobon"
+        }
       ]
-    },
-    "solution": {
-      "lines": [
-        "Ich bin Henry Barrows.",
-        "Über 20 Jahre im Digitalen — Marketing, Design, Code und Geschäftsbetrieb. Ich habe Websites gebaut, Kampagnen geführt, E-Commerce lanciert und AI in echte Workflows integriert.",
-        "Ich spreche Marketing mit Gründern und Code mit Entwicklern. Ich denke in Systemen, liefere Ergebnisse und halte die Dinge einfach.",
-        "Ein Ansprechpartner. Vom ersten Gespräch bis zum fertigen Produkt.",
-        "Bauen wir etwas, das funktioniert."
-      ]
-    },
-    "capabilities": {
-      "label": "Leistungen",
-      "1": { "title": "Marketing", "desc": "Positionierung, Strategie, Kampagnen", "anchor": "marketing" },
-      "2": { "title": "Technology", "desc": "Websites, E-Commerce, Design, AI, Crypto", "anchor": "technology" },
-      "3": { "title": "Media", "desc": "Content, Design, PR", "anchor": "media" },
-      "note": "Die meisten Projekte brauchen alle drei. Manche nur einen. Ich richte mich nach Ihnen, nicht nach meinem Angebot."
     },
     "for": {
-      "label": "Für wen",
+      "h2": "Für Unternehmen, bei denen Vertrauen alles entscheidet.",
       "items": [
-        "Gründer, die nicht fünf Leute koordinieren wollen.",
-        "Etablierte Unternehmen, deren Website von 2019 ist.",
-        "KMU, die von Localsearch oder Wix enttäuscht wurden.",
-        "Premium-Marken, die einen Auftritt verdienen, der zu ihnen passt.",
-        "Persönlichkeiten, die Medienpräsenz aufbauen wollen.",
-        "Wenn Sie \"eigentlich müssten wir mal...\" denken — dann ist es Zeit."
-      ]
-    },
-    "howItWorks": {
-      "label": "Erste Schritte",
-      "steps": [
-        { "title": "Gespräch", "desc": "Sie erzählen, wo Sie stehen und wo Sie hin wollen. Ich höre zu und frage nach." },
-        { "title": "Diagnose", "desc": "Ich schaue mir Ihre Situation an und sage Ihnen, was Sie wirklich brauchen." },
-        { "title": "Angebot", "desc": "Klarer Umfang, fester Preis, realistischer Zeitplan." },
-        { "title": "Umsetzung", "desc": "Ich baue. Sie geben Feedback. Wir verfeinern bis es passt." },
-        { "title": "Ergebnis", "desc": "Es funktioniert. Sie wachsen. Wir bleiben in Kontakt." }
-      ]
-    },
-    "pricing": {
-      "label": "Investition",
-      "cards": [
-        { "name": "Projekt", "price": "Ab CHF 4'000", "desc": "Website, E-Commerce, Strategie — definiertes Ziel, fester Preis." },
-        { "name": "Jährlich (Einstieg)", "price": "Ab CHF 1'400", "desc": "Laufende Unterstützung, Marketing, Optimierung. Jährliche Abrechnung." },
-        { "name": "Retainer", "price": "Individuell", "desc": "Flexibles Budget, prioritärer Zugang." }
+        "Etablierte KMU, deren Website von 2019 ist — und so aussieht.",
+        "Praxen, Kanzleien und Betriebe, bei denen der erste Eindruck online entsteht.",
+        "Unternehmen, die von Localsearch oder Wix enttäuscht wurden.",
+        "Gründer, die einen Partner wollen statt drei Freelancer und eine Agentur."
       ],
-      "note": "Keine Stundensätze. Keine Überraschungen."
+      "closer": "Wenn Sie sich hier wiedererkennen, sollten wir reden."
+    },
+    "servicesTeaser": {
+      "h2": "Was ich mache",
+      "items": [
+        {
+          "title": "Websites & Ecommerce",
+          "desc": "Massgeschneidert, kein Baukasten. Schnell, auffindbar, mehrsprachig wenn nötig."
+        },
+        {
+          "title": "Marketing",
+          "desc": "Positionierung, Inhalte, Sichtbarkeit. Klarheit vor Kreativität."
+        },
+        {
+          "title": "Technik",
+          "desc": "SEO, Performance, KI-Integration, Krypto-Zahlungen. Alles aus einer Hand."
+        }
+      ],
+      "stat": "Jede meiner Websites erreicht über 90 Punkte im Google-Performance-Test. Typische Baukasten-Seiten: 40–60. Schnellere Seiten ranken besser — und verlieren weniger Besucher.",
+      "link": "Alle Leistungen"
+    },
+    "process": {
+      "h2": "So läuft es ab",
+      "steps": [
+        { "title": "Gespräch", "desc": "30 Minuten, unverbindlich. Sie erzählen, ich höre zu." },
+        { "title": "Fixofferte", "desc": "Sie wissen genau, was es kostet und was Sie bekommen." },
+        { "title": "Umsetzung", "desc": "Ich baue, Sie führen Ihr Geschäft weiter. Abstimmung nur, wo nötig." },
+        { "title": "Launch", "desc": "Getestet, schnell, auffindbar." },
+        { "title": "Betreuung", "desc": "Auf Wunsch bleibe ich dran — Ihre Website veraltet nie wieder." }
+      ]
+    },
+    "investment": {
+      "h2": "Was kostet das?",
+      "p1": "Jedes Projekt bekommt eine Fixofferte vor Projektstart. Sie wissen vorher genau, was es kostet und was Sie bekommen — keine Stundenabrechnung, kein Scope Creep, keine Rechnung, mit der Sie nicht gerechnet haben.",
+      "p2": "Einmalige Projekte und laufende Partnerschaften sind beide möglich. Sagen Sie mir, was Sie brauchen — ich sage Ihnen, was es kostet."
+    },
+    "contact": {
+      "h2": "Erzählen Sie mir von Ihrem Projekt.",
+      "p": "Schreiben Sie mir zwei Sätze — was Sie haben, was Sie brauchen. Sie hören innerhalb eines Werktags von mir."
+    }
+  },
+  "work": {
+    "meta": {
+      "title": "Ausgewählte Arbeiten — henry.marketing",
+      "description": "Case Studies: Arztpraxen, politische Kampagnen, technische Betriebe. Jede Website über 90 Punkte im Google-Performance-Test."
+    },
+    "h1": "Ausgewählte Arbeiten",
+    "intro1": "Ich baue für Unternehmen, bei denen Vertrauen alles entscheidet — Arztpraxen, politische Kampagnen, technische Betriebe. Verschiedene Branchen, immer derselbe Auftrag: Menschen so viel Sicherheit geben, dass sie zum Telefon greifen.",
+    "intro2": "Jede Website erreicht über 90 Punkte im Google-Performance-Test. Zum Vergleich: Typische Localsearch- oder Wix-Seiten liegen bei 40–60. Schnellere Seiten ranken besser — und verlieren weniger Besucher.",
+    "groups": {
+      "healthcare": "Healthcare",
+      "publicTrust": "Public Trust",
+      "trades": "Trades & B2B"
+    },
+    "cases": {
+      "schlafzahnmedizin": {
+        "h3": "Schlafzahnmedizin Schaffhausen",
+        "lead": "Eine Spezialisierung verdient mehr als eine Unterseite.",
+        "body": [
+          "Dr. Neumann behandelt Schlafapnoe — eine Leistung, die auf einer normalen Praxis-Website untergegangen wäre. Statt sie dort zu verstecken, haben wir ihr ein eigenes Zuhause gebaut: eine fokussierte Website, die Dr. Neumann als regionalen Spezialisten positioniert und gezielt Patienten anzieht, die genau danach suchen.",
+          "Vom Symptom über die Therapie bis zu den Fachgesellschaften: Die Seite baut Schritt für Schritt Vertrauen auf — und führt neue Patienten zurück in die Praxis.",
+          "Das ist keine Website. Das ist Patientengewinnung mit eigener Adresse."
+        ],
+        "meta": "Zwei-Seiten-Strategie mit zahnarzt-neumann.ch",
+        "url": "https://schlafzahnmedizin.ch",
+        "group": "healthcare",
+        "assetTodo": "public/images/work/schlafzahnmedizin.webp — flattering section screenshot from schlafzahnmedizin.ch",
+        "pagespeed": { "perf": 91, "a11y": 96, "bp": 96, "seo": 100, "href": "https://pagespeed.web.dev/analysis/https-schlafzahnmedizin-ch/d8i1pbwj88?form_factor=desktop" }
+      },
+      "wicki": {
+        "h3": "André Wicki — Wiederwahl 2026",
+        "lead": "Wenn der Stadtpräsident anruft, gibt es keine zweite Chance.",
+        "body": [
+          "Eine Kampagnen-Website hat einen fixen Termin, null Toleranz für Fehler und genau eine Aufgabe: aus Besuchern Unterstützer machen. Für die Wiederwahl von André Wicki als Stadtpräsident von Zug entstand eine Website, die Bilanz und Ziele klar kommuniziert — schnell gebaut, schnell geladen, verlässlich bis zum Wahltag.",
+          "Politik ist die härteste Vertrauensbranche, die es gibt. Genau deshalb steht dieses Projekt hier."
+        ],
+        "meta": "Launch bis Kampagnenstart",
+        "url": "https://www.wickizug.ch",
+        "group": "publicTrust",
+        "assetTodo": "public/images/work/wicki.webp — flattering section screenshot from wickizug.ch",
+        "pagespeed": { "perf": 100, "a11y": 96, "bp": 100, "seo": 100, "href": "https://pagespeed.web.dev/analysis/https-wickizug-ch/fwfsm0b6wy?form_factor=desktop" }
+      },
+      "pietrobon": {
+        "h3": "Pietrobon & Michel — Dentallabor an der Bahnhofstrasse",
+        "lead": "Premium-Adresse, Premium-Auftritt.",
+        "body": [
+          "Ein Dentallabor an der Zürcher Bahnhofstrasse mit internationaler Kundschaft braucht eine Website, die dem Standort gerecht wird. Der Auftritt ist viersprachig — Deutsch, Englisch, Italienisch, Russisch — und spiegelt den Anspruch des Labors: höchste Handwerkskunst, diskret präsentiert."
+        ],
+        "meta": "Viersprachig",
+        "url": "https://www.pietrobonundmichel.ch",
+        "group": "healthcare",
+        "assetTodo": "public/images/work/pietrobon.webp — flattering section screenshot from pietrobonundmichel.ch",
+        "pagespeed": { "perf": 93, "a11y": 88, "bp": 96, "seo": 100, "href": "https://pagespeed.web.dev/analysis/https-pietrobonundmichel-ch/0cnt3vas73?form_factor=desktop" }
+      },
+      "obrenovic": {
+        "h3": "Zahnarztpraxis Dr. Obrenovic",
+        "lead": "Die Website soll sich so anfühlen wie die Praxis: ruhig, sorgfältig, vertrauenswürdig.",
+        "body": [
+          "Für eine Zahnarztpraxis am Zürichsee zählt kein Effekt, sondern der Eindruck: Hier bin ich in guten Händen. Klare Struktur, angenehme Gestaltung, direkter Weg zur Terminanfrage — mehr braucht es nicht, und genau das ist die Kunst."
+        ],
+        "meta": "Hell-/Dunkelmodus",
+        "url": "https://www.drobrenovic.ch",
+        "group": "healthcare",
+        "assetTodo": "public/images/work/obrenovic.webp — flattering section screenshot from drobrenovic.ch",
+        "pagespeed": { "perf": 100, "a11y": 100, "bp": 100, "seo": 100, "href": "https://pagespeed.web.dev/analysis/https-www-drobrenovic-ch/ry0ybevyh?form_factor=desktop" }
+      },
+      "neumann": {
+        "h3": "Zahnarztpraxis Dr. Neumann",
+        "lead": "Die Praxis-Website als Fundament — schnell, klar, auffindbar.",
+        "body": [
+          "Der Hauptauftritt der Praxis: Behandlungen, Team, Terminanfrage. Solide gebaut mit perfektem Google-Performance-Score von 100 — die technische Basis, auf der die Zwei-Seiten-Strategie mit schlafzahnmedizin.ch aufsetzt."
+        ],
+        "meta": "Teil einer Zwei-Seiten-Strategie → Schlafzahnmedizin",
+        "url": "https://zahnarzt-neumann.ch",
+        "group": "healthcare",
+        "crossLink": "schlafzahnmedizin",
+        "crossLinkLabel": "Zur Schlafzahnmedizin-Case Study",
+        "assetTodo": "public/images/work/neumann.webp — NOT the hero; use a stronger mid-page section from zahnarzt-neumann.ch",
+        "pagespeed": { "perf": 100, "a11y": 96, "bp": 100, "seo": 100, "href": "https://pagespeed.web.dev/analysis/http-zahnarzt-neumann-ch/f3f4y61bir?form_factor=desktop" }
+      },
+      "greenair": {
+        "h3": "GreenAir — Gebäudetechnik",
+        "lead": "In Arbeit. Launch 2026.",
+        "body": [
+          "Kompletter Webauftritt für ein Schweizer Gebäudetechnik-Unternehmen — suissetec-Mitglied, ISO-9001-zertifiziert. Aktuell live: die Vorschau. Die vollständige Website folgt."
+        ],
+        "meta": "Coming Soon · vollständige Case Study nach Launch",
+        "url": "https://greenair.ch",
+        "group": "trades",
+        "assetTodo": "public/images/work/greenair.webp — preview screenshot from greenair.ch",
+        "pagespeed": { "perf": 100, "a11y": 96, "bp": 100, "seo": 100, "href": "https://pagespeed.web.dev/analysis/https-greenair-ch/v0lkl7wm08?form_factor=desktop" }
+      }
     },
     "cta": {
-      "h2": "Fangen wir an.",
-      "p": "Schreiben Sie mir. Unverbindlich.",
-      "cta": "Projekt besprechen"
+      "h2": "Ihr Projekt könnte das nächste sein.",
+      "p": "Erzählen Sie mir, was Sie brauchen — ich sage Ihnen, was es kostet und wie lange es dauert. Fixpreis, keine Überraschungen.",
+      "button": "Projekt anfragen"
     }
   },
   "services": {
-    "hero": {
-      "h1": "Was ich baue.",
-      "p": "Marketing. Technology. Media. Alles was Sie brauchen, um digital zu wachsen."
+    "meta": {
+      "title": "Leistungen — henry.marketing",
+      "description": "Strategie, Design, Code, Launch — aus einer Hand. Marketing, Technik und Media für Schweizer Unternehmen."
     },
-    "intro": "Eine Website ohne Marketing ist unsichtbar. Marketing ohne Technologie ist ineffizient. Content ohne Strategie ist Lärm. Ich biete alle drei. Sie wählen, was Sie brauchen.",
-    "introParts": ["Eine Website ohne ", " ist unsichtbar. ", " ohne ", " ist ineffizient. ", " ohne Strategie ist Lärm. Ich biete alle drei. Sie wählen, was Sie brauchen."],
-    "introTerms": { "marketing": "Marketing", "technology": "Technologie", "content": "Content" },
-    "marketing": {
-      "title": "Marketing",
-      "items": [
-        { "name": "Positionierung", "desc": "Wer Sie sind, was Sie tun, warum es jemanden interessiert. Klarheit vor Kreativität." },
-        { "name": "Strategie", "desc": "Welche Kanäle, welche Botschaften, welche Ziele. Ein Plan, kein Raten." },
-        { "name": "Kampagnen", "desc": "Von der Idee bis zur Messung. Was funktioniert, wird wiederholt." },
-        { "name": "Content-Marketing", "desc": "Nicht \"posten um des Postens willen.\" Inhalte, die Vertrauen aufbauen." }
-      ],
-      "for": "Für: Gründer, die klar positionieren wollen. Unternehmen, die mehr als nur eine Website brauchen. Marken, die ihre Geschichte erzählen möchten."
+    "h1": "Leistungen",
+    "intro": "Strategie, Design, Code, Launch — aus einer Hand. Keine Übergaben zwischen Agenturen und Freelancern, keine Reibungsverluste. Sie sprechen mit der Person, die es baut.",
+    "pillars": {
+      "marketing": {
+        "title": "Marketing",
+        "tagline": "Klarheit vor Kreativität.",
+        "items": [
+          {
+            "name": "Positionierung & Strategie",
+            "aphorism": "Was Sie sagen, wie Sie es sagen, wo es gehört wird.",
+            "body": "Bevor irgendetwas gebaut wird, klären wir: Wer sind Sie, für wen, und warum sollte das jemanden interessieren?",
+            "typical": "Typisch: Positionierungs-Workshop, Kernbotschaften, Struktur und Inhalte für Ihren Webauftritt.",
+            "for": "Für: Unternehmen, die «modern wirken» wollen, aber noch nicht wissen, was sie eigentlich sagen sollen."
+          },
+          {
+            "name": "Inhalte & Sichtbarkeit",
+            "aphorism": "Die richtige Geschichte am richtigen Ort.",
+            "body": "Texte, die verkaufen statt füllen — und eine Website, die Google versteht.",
+            "typical": "Typisch: Website-Texte, SEO-Grundlagen, Google Business Profil, lokale Auffindbarkeit.",
+            "for": "Für: Betriebe, die bei Google unsichtbar sind, obwohl ihre Kunden dort suchen."
+          },
+          {
+            "name": "Spezialisierungs-Strategien",
+            "aphorism": "Manchmal ist die beste Marketing-Entscheidung eine eigene Website.",
+            "body": "Eine Spezialisierung mit eigener Adresse macht Sie zum regionalen Ansprechpartner — statt zur Unterseite.",
+            "typical": "Typisch: Eigenständige Website für eine Kernleistung, verzahnt mit Ihrem Hauptauftritt.",
+            "ref": "Referenz: Schlafzahnmedizin Schaffhausen",
+            "refHref": "/work"
+          }
+        ]
+      },
+      "technik": {
+        "title": "Technik",
+        "tagline": "Gebaut, nicht zusammengeklickt.",
+        "items": [
+          {
+            "name": "Websites & Ecommerce",
+            "aphorism": "Massgeschneidert, kein Baukasten.",
+            "body": "Schnell auf jedem Gerät, auffindbar bei Google, mehrsprachig wenn Ihre Kunden es sind.",
+            "typical": "Typisch: Individuell entwickelte Website, Launch in 4–8 Wochen, über 90 Punkte im Google-Performance-Test.",
+            "ref": "Referenz: Pietrobon & Michel — viersprachig, Bahnhofstrasse Zürich",
+            "refHref": "/work"
+          },
+          {
+            "name": "Relaunch & Migration",
+            "aphorism": "Ihre Website ist in die Jahre gekommen?",
+            "body": "Ich baue sie neu — Inhalte, Design, Technik — ohne dass Sie Ihre Google-Rankings verlieren.",
+            "typical": "Typisch: Analyse des Bestands, Neubau, saubere Weiterleitungen, messbar schnellerer Auftritt.",
+            "for": "Für: Unternehmen, deren Website von 2019 ist — oder von Localsearch."
+          },
+          {
+            "name": "KI-Integration",
+            "aphorism": "KI dort, wo sie tatsächlich Arbeit abnimmt — nicht als Buzzword, sondern als Werkzeug.",
+            "body": "Praktisch eingesetzt, nicht experimentell.",
+            "typical": "Typisch: Chatbot, der Kundenanfragen auf Basis Ihrer Unterlagen beantwortet. Automatisierte Abläufe, die Ihnen wiederkehrende Handarbeit ersparen.",
+            "for": "Für: KMU, die von KI profitieren wollen, ohne ein Forschungsprojekt zu starten."
+          },
+          {
+            "name": "Krypto-Zahlungen",
+            "aphorism": "Bitcoin, Stablecoins, moderne Zahlungswege — sauber integriert in Ihren bestehenden Auftritt.",
+            "body": "Verständlich erklärt für Ihre Kunden.",
+            "typical": "Typisch: Zahlungsintegration in Website oder Shop.",
+            "for": "Für: Unternehmen, die vorausdenken. Kein Muss — aber wenn, dann richtig."
+          }
+        ]
+      },
+      "media": {
+        "title": "Media",
+        "tagline": "Der erste Eindruck entsteht in Sekunden.",
+        "items": [
+          {
+            "name": "Design & Erscheinungsbild",
+            "aphorism": "Gestaltung, die Vertrauen aufbaut, bevor ein Wort gelesen wird.",
+            "body": "Kein Effekt um des Effekts willen — sondern ein Auftritt, der zu Ihnen passt und Ihre Liga zeigt.",
+            "typical": "Typisch: Gestaltung im Rahmen des Website-Projekts — Layout, Typografie, Bildsprache, Farbwelt.",
+            "ref": "Referenz: Dr. Obrenovic — ruhig, sorgfältig, vertrauenswürdig",
+            "refHref": "/work"
+          },
+          {
+            "name": "Foto & Bildwelt",
+            "aphorism": "Echte Bilder schlagen Stockfotos. Immer.",
+            "body": "Ich sorge dafür, dass Ihre Website Sie zeigt — nicht ein Fotomodell aus einer Datenbank.",
+            "typical": "Typisch: Bildkonzept, Koordination mit Fotografen, Bildauswahl und Aufbereitung fürs Web.",
+            "for": "Für: Praxen und Betriebe, deren Website austauschbar aussieht."
+          }
+        ]
+      }
     },
-    "technology": {
-      "title": "Technology",
-      "items": [
-        { "name": "Websites & E-Commerce", "desc": "Modern, schnell, konvertiert. Auf Ihre Bedürfnisse zugeschnitten." },
-        { "name": "AI-Integration", "desc": "Workflows automatisieren, Chatbots, Content-Tools. Praktisch eingesetzt, nicht experimentell." },
-        { "name": "Crypto-Payments", "desc": "Bitcoin, Stablecoins, moderne Zahlungswege. Für Unternehmen, die vorwärts denken." },
-        { "name": "API & Integrationen", "desc": "Systeme verbinden, Daten fliessen lassen. Keine Insellösungen." }
-      ],
-      "for": "Für: Unternehmen, deren Website mehr können sollte. Gründer, die AI produktiv einsetzen wollen. Teams, die ihre Tools verbinden müssen."
+    "retainer": {
+      "title": "Betreuung & Wachstum",
+      "tagline": "Ihre Website veraltet nie wieder.",
+      "body": "Eine Website ist kein Projekt mit Enddatum. Inhalte ändern sich, Google ändert sich, Ihr Geschäft ändert sich. Ich bleibe dran — Änderungen, Optimierung, Sicherheit, Weiterentwicklung.",
+      "typical": "Typisch: Laufende Partnerschaft mit fixem Jahresbetrag. Sie melden sich, ich erledige. Keine Stundenzettel.",
+      "for": "Für: Unternehmen, die einen Partner wollen — nicht einen Dienstleister, den man jedes Mal neu briefen muss."
     },
-    "media": {
-      "title": "Media",
-      "items": [
-        { "name": "Content-Strategie", "desc": "Was Sie sagen, wie Sie es sagen, wo es gehört wird." },
-        { "name": "Design & Visuals", "desc": "Visuelle Identität, Assets und Kreatives, das zu Ihrer Marke passt." },
-        { "name": "PR & Medienarbeit", "desc": "Die richtige Geschichte am richtigen Ort." },
-        { "name": "Social Media", "desc": "Inhalte, die Ihre Position stärken. Strategisch, nicht reaktiv." }
-      ],
-      "for": "Für: Gründer, die als Expert:innen sichtbar werden. Unternehmen, die Medienaufmerksamkeit nutzen. Persönlichkeiten, die ihre Geschichte kontrollieren."
-    },
-    "pricing": {
-      "label": "Investition",
-      "cards": [
-        { "name": "Projekt", "price": "Ab CHF 4'000", "desc": "Website, E-Commerce, Strategie — definiertes Ziel, fester Preis." },
-        { "name": "Jährlich (Einstieg)", "price": "Ab CHF 1'400", "desc": "Laufende Unterstützung, Marketing, Optimierung. Jährliche Abrechnung." },
-        { "name": "Retainer", "price": "Individuell", "desc": "Flexibles Budget, prioritärer Zugang." }
-      ],
-      "note": "Keine Stundensätze. Keine Überraschungen."
+    "investment": {
+      "h2": "Was kostet das?",
+      "p1": "Jedes Projekt bekommt eine Fixofferte vor Projektstart. Sie wissen vorher genau, was es kostet und was Sie bekommen — keine Stundenabrechnung, kein Scope Creep, keine Rechnung, mit der Sie nicht gerechnet haben.",
+      "p2": "Einmalige Projekte und laufende Partnerschaften sind beide möglich. Sagen Sie mir, was Sie brauchen — ich sage Ihnen, was es kostet.",
+      "p3": "Was Ihr Projekt kostet, hängt davon ab, was es leisten soll. Sagen Sie mir, was Sie brauchen — Sie bekommen innerhalb weniger Tage eine Offerte mit Preis, Umfang und Zeitplan."
     },
     "cta": {
-      "h2": "Fangen wir an.",
-      "p": "Schreiben Sie mir. Unverbindlich.",
-      "cta": "Projekt besprechen"
+      "h2": "Nicht sicher, was Sie brauchen?",
+      "p": "Das ist normal — herauszufinden, was Sie wirklich brauchen, ist Teil meiner Arbeit. Erzählen Sie mir, wo Sie stehen, und ich sage Ihnen ehrlich, was sinnvoll ist. Auch wenn die Antwort lautet: weniger, als Sie dachten.",
+      "button": "Gespräch anfragen"
     }
   },
   "about": {
+    "meta": {
+      "title": "Über Henry Barrows — henry.marketing",
+      "description": "Henry Barrows. Schweizer mit internationalem Background. Marketer, Designer, Technologist. Zehn Jahre Dentalbranche. Basiert in Zug."
+    },
     "hero": {
       "h1": "Kurz über mich."
     },
     "bio": {
-      "tagline": "Marketing · Design · Technologie · Code",
       "lines": [
-        "Henry Barrows. Schweizer und international.",
-        "Über 20 Jahre im Digitalen — Marketing, Design, Websites, E-Commerce und Geschäftsbetrieb. Seit über einem Jahrzehnt selbstständig, meist im Hintergrund für die Marken anderer.",
-        "Ich spreche Marketing mit Gründern und Code mit Entwicklern. Ich designe, ich baue, ich liefere. Eine Person, von A bis Z.",
-        "Nebenbei habe ich einen MSc in Blockchain & Digital Currencies gemacht — weil ich gerne verstehe, wie Dinge wirklich funktionieren, nicht nur, wie man darüber redet.",
-        "Heute verbinde ich all diese Erfahrung mit AI, um bessere und schnellere Ergebnisse für Kunden zu liefern.",
-        "Offen für Partnerschaften, Beratung und interessante Gespräche."
+        "Henry Barrows. Schweizer mit internationalem Background. Marketer, Designer, Technologist.",
+        "Ich habe Websites für Zahnarztpraxen gebaut und KI-Strategien für Finanzdienstleister entwickelt.",
+        "Ich habe Podcasts produziert und Online-Shops an den Start gebracht.",
+        "Ich spreche Marketing mit Gründern und Code mit Entwicklern.",
+        "Zehn Jahre davon in der Dentalbranche — Praxen, Labore, Patientengewinnung. Ich kenne regulierte, vertrauenskritische Branchen von innen.",
+        "Das ist selten. Das ist wertvoll. Und das bekommen Sie."
       ]
     },
     "philosophy": {
-      "title": "Lass uns zusammenarbeiten",
+      "title": "Wie ich arbeite",
       "items": [
         "Kein Bullshit. Kein Buzzword-Bingo. Ich sage Ihnen, was Sie brauchen, nicht was am meisten kostet.",
         "Ich arbeite direkt mit Entscheidern. Kein Account Manager dazwischen.",
-        "Ich liefere. Nicht Decks, nicht Konzepte. Ergebnisse."
+        "Ich liefere. Keine Decks, keine Konzepte. Resultate."
       ]
     },
+    "workStrip": "Ausgewählte Arbeiten",
     "cta": {
       "h2": "Fangen wir an.",
       "p": "Schreiben Sie mir. Unverbindlich.",
-      "cta": "Projekt besprechen"
+      "cta": "Projekt anfragen"
     }
   },
   "contact": {
-    "hero": {
-      "h1": "Lassen Sie uns reden."
+    "meta": {
+      "title": "Kontakt — henry.marketing",
+      "description": "Erzählen Sie mir von Ihrem Projekt. Antwort innerhalb eines Werktags. henry@henry.marketing · 079 175 20 20"
     },
-    "intro": "Erzählen Sie mir, wo Sie stehen. Ich sage Ihnen, was Sie brauchen.",
-    "location": "Zug, Schweiz. Arbeitet remote mit Kunden in der Schweiz und international.",
-    "cta": "Projekt besprechen"
+    "h2": "Erzählen Sie mir von Ihrem Projekt.",
+    "p": "Schreiben Sie mir zwei Sätze — was Sie haben, was Sie brauchen. Sie hören innerhalb eines Werktags von mir."
   },
   "footer": {
-    "tagline": "Marketing. Technology. Media. Ein Partner."
-  },
-  "impressum": {
-    "title": "Impressum",
-    "publisher": "Herausgeber & Kontakt",
-    "name": "Henry Barrows",
-    "business": "henry.marketing",
-    "address": "Zug, Schweiz",
-    "email": "henry@henry.marketing",
-    "phone": "079 175 20 20",
-    "disclaimerTitle": "Haftungsausschluss",
-    "disclaimer": "Die Inhalte dieser Website dienen nur der allgemeinen Information. Kein Anspruch auf Vollständigkeit oder Richtigkeit. Keine Haftung für externe Links. Durch den Besuch dieser Website entsteht kein Mandatsverhältnis.",
-    "handelsregisterTitle": "Handelsregisterinformationen (Quelle: SHAB)",
-    "entryDate": "12.05.2015",
-    "entryDateLabel": "Eintrag ins Handelsregister",
-    "legalForm": "Einzelfirma",
-    "legalFormLabel": "Rechtsform",
-    "seat": "Zug",
-    "seatLabel": "Rechtssitz der Firma",
-    "registerOffice": "ZG",
-    "registerOfficeLabel": "Handelsregisteramt",
-    "registerNumber": "CH-020.1.070.851-4",
-    "registerNumberLabel": "Handelsregister-Nummer",
-    "uid": "CHE-196.330.315",
-    "uidLabel": "UID/MWST",
-    "branch": "Erbringung von PR-Dienstleistungen",
-    "branchLabel": "Branche",
-    "purpose": "Erbringung von Dienstleistungen sowie Durchführung von Beratungen in den Bereichen PR, Marketing, Werbung und EDV; Übernahme von Gesamtorganisationen im Marketingbereich; Handel mit Waren sowie Erbringung von Dienstleistungen in den vorgenannten Bereichen.",
-    "purposeLabel": "Firmenzweck"
-  },
-  "cookie": {
-    "message": "Wir verwenden ein Cookie: damit wir uns merken, dass Sie OK gesagt haben. Keine Tracker, keine Werbung.",
-    "accept": "OK"
-  },
-  "faq": {
-    "title": "FAQ",
-    "questions": [
-      { "q": "Für wen ist das?", "a": "Gründer, die nicht fünf Leute koordinieren wollen. Etablierte Unternehmen mit veralteter Website. KMU, die von Standardlösungen enttäuscht wurden. Premium-Marken, die einen Auftritt verdienen, der zu ihnen passt. Wenn Sie \"eigentlich müssten wir mal...\" denken — dann ist es Zeit." },
-      { "q": "Wie funktioniert die Preisgestaltung?", "a": "Projektbasiert ab CHF 4'000 (Website, E-Commerce, Strategie). Ab CHF 1'400 jährlich (Einstieg) für laufende Unterstützung. Retainer für flexibles Budget und prioritären Zugang. Keine Stundensätze, keine Überraschungen." },
-      { "q": "Wo sind Sie ansässig?", "a": "Zug, Schweiz. Ich arbeite remote mit Kunden in der Schweiz und international." },
-      { "q": "Wie läuft der Prozess ab?", "a": "Wir reden — Sie erzählen, wo Sie stehen und wo Sie hin wollen. Ich schaue mir die Situation an und mache ein Angebot: klarer Umfang, fester Preis, realistischer Zeitplan. Dann baue ich; Sie geben Feedback; wir verfeinern bis es passt." },
-      { "q": "Arbeiten Sie remote?", "a": "Ja. Die meisten Projekte werden remote umgesetzt. Vor-Ort-Workshops oder Shootings können vereinbart werden, wenn es einen Mehrwert bringt." }
-    ]
+    "tagline": "Ein Partner. Alles Digitale."
   }
 }

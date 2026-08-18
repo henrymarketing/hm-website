@@ -5,6 +5,13 @@ import { routing } from './i18n/routing';
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Voice tool routes bypass i18n entirely
+  if (pathname.startsWith('/voice')) {
+    return NextResponse.next();
+  }
+
   const host = request.headers.get('host') || '';
 
   // Domain alias redirects — must be configured as custom domains on Vercel

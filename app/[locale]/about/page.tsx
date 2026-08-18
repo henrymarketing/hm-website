@@ -1,20 +1,25 @@
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
+import { CtaLink } from '@/components/ui/cta-link';
 
 type Props = { params: { locale: string } };
 
 export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
   const isDE = locale === 'de';
+  const title = isDE
+    ? 'Über Henry Barrows — henry.marketing'
+    : 'About Henry Barrows — henry.marketing';
+  const description = isDE
+    ? 'Henry Barrows. Schweizer mit internationalem Background. Marketer, Designer, Technologist. Zehn Jahre Dentalbranche. Basiert in Zug.'
+    : 'Henry Barrows. Swiss with an international background. Marketer, designer, technologist. Ten years in dental. Based in Zug.';
+
   return {
-    title: isDE
-      ? 'Über Henry Barrows — henry.marketing'
-      : 'About Henry Barrows — henry.marketing',
-    description: isDE
-      ? 'Henry Barrows. Schweizer und international. Marketer, Designer, Technologist. Zug, Schweiz.'
-      : 'Henry Barrows. Swiss and international. Marketer, designer, technologist. Based in Zug.',
+    title,
+    description,
     alternates: {
       canonical: isDE ? '/de/ueber' : '/en/about',
       languages: {
@@ -24,9 +29,11 @@ export async function generateMetadata({ params: { locale } }: Props): Promise<M
       },
     },
     openGraph: {
-      title: isDE ? 'Über Henry Barrows — henry.marketing' : 'About Henry Barrows — henry.marketing',
-      locale: isDE ? 'de_DE' : 'en_US',
+      title,
+      description,
+      locale: isDE ? 'de_CH' : 'en_US',
       type: 'website',
+      images: [{ url: '/og/default.png', width: 1200, height: 630, alt: title }],
     },
   };
 }
@@ -39,13 +46,11 @@ export default function AboutPage({ params: { locale } }: Props) {
   setRequestLocale(locale);
   const t = useTranslations('about');
 
-  const bioTagline = t('bio.tagline');
   const bioLines = t.raw('bio.lines') as string[];
   const philosophyItems = t.raw('philosophy.items') as string[];
 
   return (
     <>
-      {/* ─── HERO ─── */}
       <section className="py-24 md:py-36 px-6 max-w-6xl mx-auto">
         <AnimateOnScroll>
           <p className="text-xs tracking-[0.25em] uppercase text-orange-500 mb-8">
@@ -57,30 +62,27 @@ export default function AboutPage({ params: { locale } }: Props) {
         </AnimateOnScroll>
       </section>
 
-      {/* ─── BIO + PHOTO ─── */}
       <section className="border-t border-neutral-900 py-24 md:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-5 gap-16 items-start">
-            {/* Profile photo */}
             <AnimateOnScroll className="md:col-span-2">
-              <div className="relative w-full aspect-[4/5] border border-neutral-800" style={{ maxWidth: '400px' }}>
+              <div className="relative max-w-[400px] aspect-square">
                 <Image
-                  src="/assets/henry-2026-crop.jpg"
-                  alt="Henry Barrows"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 400px"
-                  priority
+                  src="/images/henry/portrait.webp"
+                  alt={
+                    locale === 'de'
+                      ? 'Henry Barrows — Portrait'
+                      : 'Henry Barrows — portrait'
+                  }
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover object-top"
+                  sizes="(max-width: 768px) 90vw, 400px"
                 />
-                <div className="absolute -bottom-3 -right-3 h-16 w-16 border-b-2 border-r-2 border-orange-500/30 pointer-events-none" />
               </div>
             </AnimateOnScroll>
 
-            {/* Bio text */}
             <div className="md:col-span-3 space-y-5">
-              <AnimateOnScroll delay={0}>
-                <p className="text-sm tracking-wide text-orange-500/90 font-medium">{bioTagline}</p>
-              </AnimateOnScroll>
               {bioLines.map((line, i) => (
                 <AnimateOnScroll key={i} delay={i * 80}>
                   <p
@@ -101,7 +103,6 @@ export default function AboutPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      {/* ─── PHILOSOPHY ─── */}
       <section className="border-t border-neutral-900 py-24 md:py-32 bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto px-6">
           <AnimateOnScroll>
@@ -125,7 +126,18 @@ export default function AboutPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
+      {/* Work strip */}
+      <section className="border-t border-neutral-900 py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-2 text-lg text-white hover:text-orange-500 transition-colors"
+          >
+            {t('workStrip')} →
+          </Link>
+        </div>
+      </section>
+
       <section className="border-t border-neutral-900 py-24 md:py-40">
         <div className="max-w-6xl mx-auto px-6">
           <AnimateOnScroll>
@@ -133,20 +145,7 @@ export default function AboutPage({ params: { locale } }: Props) {
               {t('cta.h2')}
             </h2>
             <p className="text-neutral-400 text-lg mb-12">{t('cta.p')}</p>
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
-              <a
-                href="mailto:henry@henry.marketing"
-                className="inline-block bg-orange-500 hover:bg-orange-400 text-black font-semibold text-sm tracking-wide px-8 py-4 transition-colors"
-              >
-                {t('cta.cta')} →
-              </a>
-              <a
-                href="tel:+41791752020"
-                className="inline-block border border-neutral-800 hover:border-neutral-600 text-neutral-300 hover:text-white text-sm tracking-wide px-8 py-4 transition-colors"
-              >
-                079 175 20 20
-              </a>
-            </div>
+            <CtaLink href="/contact">{t('cta.cta')}</CtaLink>
           </AnimateOnScroll>
         </div>
       </section>

@@ -1,9 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
+
+const NAV_ITEMS = [
+  { href: '/work' as const, key: 'work' as const },
+  { href: '/services' as const, key: 'services' as const },
+  { href: '/about' as const, key: 'about' as const },
+  { href: '/contact' as const, key: 'contact' as const },
+];
 
 export default function Header({ locale }: { locale: string }) {
   const t = useTranslations('nav');
@@ -14,56 +20,28 @@ export default function Header({ locale }: { locale: string }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-neutral-900 bg-[#0a0a0a]/95 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
         <Link
           href="/"
-          className="flex items-center h-10 hover:opacity-80 transition-opacity"
-          aria-label="henry.marketing"
+          className="text-white font-semibold tracking-[0.15em] text-sm hover:text-orange-500 transition-colors"
         >
-          <Image
-            src="/logo/henry-logo-2026-transparent.png"
-            alt="henry.marketing"
-            width={160}
-            height={40}
-            className="h-8 w-auto object-contain"
-            priority
-          />
+          HENRY.MARKETING
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link
-            href="/services"
-            className={`text-sm tracking-wide transition-colors ${
-              isActive('/services')
-                ? 'text-white border-b border-orange-500/50 pb-0.5'
-                : 'text-neutral-400 hover:text-white'
-            }`}
-          >
-            {t('work')}
-          </Link>
-          <Link
-            href="/about"
-            className={`text-sm tracking-wide transition-colors ${
-              isActive('/about')
-                ? 'text-white border-b border-orange-500/50 pb-0.5'
-                : 'text-neutral-400 hover:text-white'
-            }`}
-          >
-            {t('about')}
-          </Link>
-          <Link
-            href="/contact"
-            className={`text-sm tracking-wide transition-colors ${
-              isActive('/contact')
-                ? 'text-white border-b border-orange-500/50 pb-0.5'
-                : 'text-neutral-400 hover:text-white'
-            }`}
-          >
-            {t('contact')}
-          </Link>
+        <nav className="hidden md:flex items-center gap-8" aria-label="Main">
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`text-sm tracking-wide transition-colors ${
+                isActive(item.href)
+                  ? 'text-white border-b border-orange-500/50 pb-0.5'
+                  : 'text-neutral-400 hover:text-white'
+              }`}
+            >
+              {t(item.key)}
+            </Link>
+          ))}
 
-          {/* Language switcher */}
           <div className="flex items-center gap-2 text-sm border border-neutral-800 rounded-sm px-3 py-1">
             <Link
               href={pathname}
@@ -91,64 +69,37 @@ export default function Header({ locale }: { locale: string }) {
           </div>
         </nav>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden text-neutral-400 hover:text-white transition-colors p-1"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={locale === 'de' ? 'Menü öffnen' : 'Toggle menu'}
           aria-expanded={menuOpen}
         >
           {menuOpen ? (
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
           ) : (
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M3 12h18M3 6h18M3 18h18" />
             </svg>
           )}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden border-t border-neutral-900 bg-[#0a0a0a]">
-          <nav className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-6">
-            <Link
-              href="/services"
-              onClick={() => setMenuOpen(false)}
-              className="text-neutral-200 hover:text-white text-xl tracking-wide transition-colors"
-            >
-              {t('work')}
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setMenuOpen(false)}
-              className="text-neutral-200 hover:text-white text-xl tracking-wide transition-colors"
-            >
-              {t('about')}
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="text-neutral-200 hover:text-white text-xl tracking-wide transition-colors"
-            >
-              {t('contact')}
-            </Link>
+          <nav className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-6" aria-label="Mobile">
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="text-neutral-200 hover:text-white text-xl tracking-wide transition-colors"
+              >
+                {t(item.key)}
+              </Link>
+            ))}
             <div className="flex items-center gap-4 text-sm pt-4 border-t border-neutral-900">
               <Link
                 href={pathname}
