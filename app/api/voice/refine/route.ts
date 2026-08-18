@@ -59,10 +59,17 @@ function parseResponse(
   return { subject, body };
 }
 
+type Message = { role: 'user' | 'assistant'; content: string };
+
 export async function POST(request: Request) {
   try {
-    const { clientId, rawText, recipient = '', subject = '' } =
-      await request.json();
+    const {
+      clientId,
+      rawText,
+      recipient = '',
+      subject = '',
+      history = [] as Message[],
+    } = await request.json();
 
     const client = voiceClients[clientId];
     if (!client) {
@@ -83,6 +90,11 @@ export async function POST(request: Request) {
 
     const systemPrompt = client.system_prompt_override ?? buildPrompt(client, recipient, subject);
 
+    const messages: Message[] = [
+      ...history,
+      { role: 'user', content: rawText.trim() },
+    ];
+
     const veniceRes = await fetch(
       'https://api.venice.ai/api/v1/chat/completions',
       {
@@ -95,10 +107,10 @@ export async function POST(request: Request) {
           model: 'zai-org-glm-5-2',
           messages: [
             { role: 'system', content: systemPrompt },
-            { role: 'user', content: rawText.trim() },
+            ...messages,
           ],
           temperature: 0.7,
-          max_tokens: 800,
+          max_tokens: 1200,
         }),
       }
     );
@@ -117,7 +129,7 @@ export async function POST(request: Request) {
       veniceData.choices?.[0]?.message?.content ?? '';
 
     const parsed = parseResponse(content, subject);
-    return NextResponse.json(parsed);
+    return NextResponse.json({ ...parsed, assistantContent: content });
   } catch (err) {
     console.error('[voice/refine] Unexpected error:', err);
     return NextResponse.json({ error: 'Unexpected error' }, { status: 500 });
