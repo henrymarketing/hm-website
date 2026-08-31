@@ -6,7 +6,6 @@ import { Link } from '@/i18n/navigation';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 import { HowItWorksSection } from '@/components/sections/how-it-works-section';
 import { CtaLink } from '@/components/ui/cta-link';
-import ContactForm from '@/components/ContactForm';
 import { SplitText } from '@/components/ui/split-text';
 import { AnimateIn } from '@/components/ui/animate-in';
 import { AccentLine } from '@/components/ui/accent-line';
@@ -62,34 +61,12 @@ export default function HomePage({ params: { locale } }: Props) {
 
   return (
     <>
-      {/* HERO — oversized portrait behind copy, bottom flush to Aktuelle Arbeiten */}
+      {/* HERO */}
       <section className="relative min-h-[calc(100svh-4rem)] overflow-hidden">
-        {/* Bottom of bitmap = top of trust bar; top of image clips under header */}
-        <div className="pointer-events-none absolute bottom-0 right-0 z-0 w-[min(140vw,920px)] sm:w-[min(100vw,1040px)] md:w-[min(88vw,1180px)] lg:w-[min(80vw,1280px)] translate-x-[2%] sm:translate-x-[4%] md:translate-x-[6%] leading-[0]">
-          <AnimateIn delay={200} duration={900} y={0} className="relative w-full">
-            <Image
-              src="/images/henry/portrait.webp"
-              alt={
-                locale === 'de'
-                  ? 'Henry Barrows — Portrait'
-                  : 'Henry Barrows — portrait'
-              }
-              width={1280}
-              height={1280}
-              priority
-              className="block w-full h-auto max-w-none select-none"
-              sizes="(max-width: 768px) 100vw, 80vw"
-            />
-          </AnimateIn>
-          {/* Soft dissolve where type crosses the figure */}
-          <div
-            className="absolute inset-y-0 left-0 w-[50%] sm:w-[40%] md:w-[36%] bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0a0a0a] to-transparent md:hidden"
-            aria-hidden="true"
-          />
+        {/* Orange gradient accent — right side */}
+        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+          <div className="absolute top-0 right-0 w-[75%] h-full bg-[radial-gradient(ellipse_at_85%_30%,rgba(249,115,22,0.30)_0%,rgba(249,115,22,0.10)_40%,transparent_70%)]" />
+          <div className="absolute bottom-0 right-0 w-[50%] h-[55%] bg-[radial-gradient(ellipse_at_100%_100%,rgba(249,115,22,0.14)_0%,transparent_60%)]" />
         </div>
 
         {/* Copy sits on top — overlaps the left of the portrait */}
@@ -285,7 +262,20 @@ export default function HomePage({ params: { locale } }: Props) {
               {t('home.contact.p')}
             </p>
           </AnimateOnScroll>
-          <ContactForm />
+          <div className="flex flex-col sm:flex-row gap-6">
+            <a
+              href="mailto:henry@henry.marketing"
+              className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-400 text-black font-semibold text-sm tracking-wide px-8 py-4 transition-colors"
+            >
+              henry@henry.marketing
+            </a>
+            <a
+              href="tel:+41791752020"
+              className="inline-flex items-center gap-3 border border-neutral-700 hover:border-orange-500/60 text-white text-sm tracking-wide px-8 py-4 transition-colors"
+            >
+              079 175 20 20
+            </a>
+          </div>
         </div>
       </section>
     </>

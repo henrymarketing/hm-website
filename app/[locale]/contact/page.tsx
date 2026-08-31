@@ -2,7 +2,6 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import ContactForm from '@/components/ContactForm';
 
 type Props = { params: { locale: string } };
 
@@ -50,7 +49,20 @@ export default function ContactPage({ params: { locale } }: Props) {
         </h1>
         <p className="text-xl text-neutral-400 max-w-xl leading-relaxed mb-14">{t('p')}</p>
       </AnimateOnScroll>
-      <ContactForm />
+      <div className="flex flex-col sm:flex-row gap-6">
+        <a
+          href="mailto:henry@henry.marketing"
+          className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-400 text-black font-semibold text-sm tracking-wide px-8 py-4 transition-colors"
+        >
+          henry@henry.marketing
+        </a>
+        <a
+          href="tel:+41791752020"
+          className="inline-flex items-center gap-3 border border-neutral-700 hover:border-orange-500/60 text-white text-sm tracking-wide px-8 py-4 transition-colors"
+        >
+          079 175 20 20
+        </a>
+      </div>
     </section>
   );
 }
