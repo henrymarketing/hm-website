@@ -108,8 +108,25 @@ export default function HomePage({ params: { locale } }: Props) {
           <p className="text-xs tracking-[0.25em] uppercase text-orange-500 mb-3">
             {t('home.trust.label')}
           </p>
-          <p className="text-sm md:text-base text-neutral-400 leading-relaxed">
-            {t('home.trust.items')}
+          <p className="text-sm md:text-base text-neutral-400 leading-relaxed flex flex-wrap gap-x-0 gap-y-1">
+            {[
+              { label: 'Pietrobon & Michel, Zürich', slug: 'pietrobon' },
+              { label: locale === 'de' ? 'André Wicki, Stadtpräsident Zug' : 'André Wicki, Stadtpräsident of Zug', slug: 'wicki' },
+              { label: 'Dr. Obrenovic, Erlenbach', slug: 'obrenovic' },
+              { label: 'Dr. Neumann, Schaffhausen', slug: 'neumann' },
+              { label: 'Schlafzahnmedizin Schaffhausen', slug: 'schlafzahnmedizin' },
+              { label: 'GreenAir (Launch 2026)', slug: 'greenair' },
+            ].map(({ label, slug }, i, arr) => (
+              <span key={slug}>
+                <Link
+                  href={{ pathname: '/work', hash: slug }}
+                  className="text-orange-500 hover:text-orange-400 transition-colors"
+                >
+                  {label}
+                </Link>
+                {i < arr.length - 1 && <span className="text-neutral-600 mx-2">·</span>}
+              </span>
+            ))}
           </p>
         </div>
       </section>
