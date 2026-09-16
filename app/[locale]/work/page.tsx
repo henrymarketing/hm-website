@@ -140,6 +140,26 @@ export default function WorkPage({ params: { locale } }: Props) {
               <div className="space-y-24">
                 {groupCases.map((slug, i) => {
                   const c = cases[slug];
+                  const ps = c.pagespeed;
+                  const psScores = ps
+                    ? (
+                        [
+                          ['Perf.', ps.perf],
+                          ['Access.', ps.a11y],
+                          ['Best Pr.', ps.bp],
+                          ['SEO', ps.seo],
+                        ] as [string, number][]
+                      ).map(([label, val]) => (
+                        <div key={label} className="text-center">
+                          <div className={`text-lg font-light tabular-nums leading-none ${val >= 90 ? 'text-green-400' : 'text-orange-400'}`}>
+                            {val}
+                          </div>
+                          <div className="text-[9px] uppercase tracking-widest text-neutral-600 mt-1">
+                            {label}
+                          </div>
+                        </div>
+                      ))
+                    : null;
                   return (
                     <article
                       key={slug}
@@ -174,36 +194,22 @@ export default function WorkPage({ params: { locale } }: Props) {
                           </p>
                         ))}
                         <p className="text-neutral-600 text-sm italic mt-6">{c.meta}</p>
-                        {c.pagespeed && (
+                        {ps && ps.href ? (
                           <a
-                            href={c.pagespeed.href}
+                            href={ps.href}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mt-5 inline-flex items-end gap-5 group/ps"
                             aria-label="Google PageSpeed Insights desktop report"
                           >
-                            {(
-                              [
-                                ['Perf.', c.pagespeed.perf],
-                                ['Access.', c.pagespeed.a11y],
-                                ['Best Pr.', c.pagespeed.bp],
-                                ['SEO', c.pagespeed.seo],
-                              ] as [string, number][]
-                            ).map(([label, val]) => (
-                              <div key={label} className="text-center">
-                                <div className={`text-lg font-light tabular-nums leading-none ${val >= 90 ? 'text-green-400' : 'text-orange-400'}`}>
-                                  {val}
-                                </div>
-                                <div className="text-[9px] uppercase tracking-widest text-neutral-600 mt-1">
-                                  {label}
-                                </div>
-                              </div>
-                            ))}
+                            {psScores}
                             <div className="text-[10px] text-neutral-700 group-hover/ps:text-orange-500 transition-colors mb-0.5 ml-1">
                               PageSpeed ↗
                             </div>
                           </a>
-                        )}
+                        ) : ps ? (
+                          <div className="mt-5 inline-flex items-end gap-5">{psScores}</div>
+                        ) : null}
                         {c.crossLink && c.crossLinkLabel && (
                           <p className="mt-4">
                             <a

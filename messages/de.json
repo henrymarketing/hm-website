@@ -137,7 +137,8 @@
         "meta": "Archiv, Authentication & Werkverzeichnis",
         "url": "https://schlemmer.org",
         "group": "culture",
-        "assetTodo": "public/images/work/schlemmer.webp — flattering screenshot from schlemmer.org"
+        "assetTodo": "public/images/work/schlemmer.webp — flattering screenshot from schlemmer.org",
+        "pagespeed": { "perf": 99, "a11y": 92, "bp": 100, "seo": 100, "href": "" }
       },
       "schlafzahnmedizin": {
         "h3": "Schlafzahnmedizin Schaffhausen",
