@@ -110,7 +110,7 @@ export default function HomePage({ params: { locale } }: Props) {
           </p>
           <p className="text-sm md:text-base text-neutral-400 leading-relaxed flex flex-wrap gap-x-0 gap-y-1">
             {[
-              { label: 'schlemmer.org, Estate Oskar Schlemmer', slug: 'schlemmer' },
+              { label: 'schlemmer.org, Oskar Schlemmer Theatre Archives', slug: 'schlemmer' },
               { label: 'Pietrobon & Michel, Zürich', slug: 'pietrobon' },
               { label: locale === 'de' ? 'André Wicki, Stadtpräsident Zug' : 'André Wicki, Stadtpräsident of Zug', slug: 'wicki' },
               { label: 'Dr. Obrenovic, Erlenbach', slug: 'obrenovic' },

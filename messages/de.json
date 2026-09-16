@@ -120,18 +120,18 @@
     "intro1": "Ich baue für Unternehmen, bei denen Vertrauen alles entscheidet — Arztpraxen, politische Kampagnen, technische Betriebe. Verschiedene Branchen, immer derselbe Auftrag: Menschen so viel Sicherheit geben, dass sie zum Telefon greifen.",
     "intro2": "Jede Website erreicht über 90 Punkte im Google-Performance-Test. Zum Vergleich: Typische Localsearch- oder Wix-Seiten liegen bei 40–60. Schnellere Seiten ranken besser — und verlieren weniger Besucher.",
     "groups": {
-      "culture": "Kultur & Erbe",
+      "culture": "Kultur & Kunst",
       "healthcare": "Healthcare",
       "publicTrust": "Public Trust",
       "trades": "Trades & B2B"
     },
     "cases": {
       "schlemmer": {
-        "h3": "Schlemmer.org — Estate Oskar Schlemmer",
-        "lead": "Ein Bauhaus-Erbe, gebaut fürs Web.",
+        "h3": "Schlemmer.org — Oskar Schlemmer Theatre Archives",
+        "lead": "Ein Bauhaus-Vermächtnis, gebaut fürs Web.",
         "body": [
-          "Oskar Schlemmer (1888–1943) war eine der prägenden Figuren der Bauhaus-Bewegung — Maler, Bildhauer, Choreograf des Triadischen Balletts. Sein Nachlass brauchte eine Heimat, die dem Gewicht des Werkes gerecht wird.",
-          "Wir haben schlemmer.org als lebendiges Archiv gebaut: Werkverzeichnis, Werkauthentication und ein Familiengeschichts-Bereich, kuratiert von seinem Enkel C. Raman Schlemmer.",
+          "Oskar Schlemmer (1888–1943) war eine der prägenden Figuren der Bauhaus-Bewegung — Maler, Bildhauer, Choreograf des Triadischen Balletts. Die Theatre Archives brauchten eine Heimat, die dem Gewicht des Werkes gerecht wird.",
+          "Wir haben schlemmer.org als lebendiges Archiv gebaut: Werkverzeichnis, Werkauthentication und ein Familiengeschichts-Bereich, kuratiert von C. Raman Schlemmer.",
           "Die Herausforderung: akademische Strenge und Zugänglichkeit in Einklang bringen — ein Jahrhundert Kunst präsent fühlen lassen, nicht konserviert."
         ],
         "meta": "Archiv, Authentication & Werkverzeichnis",

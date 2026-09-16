@@ -9,16 +9,16 @@ import JsonLd from '@/components/JsonLd';
 type Props = { params: { locale: string } };
 
 const CASE_ORDER = [
+  'wicki',
   'schlemmer',
   'schlafzahnmedizin',
   'pietrobon',
   'obrenovic',
   'neumann',
-  'wicki',
   'greenair',
 ] as const;
 
-const GROUP_ORDER = ['culture', 'healthcare', 'publicTrust', 'trades'] as const;
+const GROUP_ORDER = ['publicTrust', 'culture', 'healthcare', 'trades'] as const;
 
 type PageSpeedData = {
   perf: number;
