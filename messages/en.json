@@ -120,11 +120,25 @@
     "intro1": "I build for businesses where trust decides everything — medical practices, political campaigns, technical companies. Different industries, same job: give people enough confidence to pick up the phone.",
     "intro2": "Every site scores over 90 on Google's performance test. For comparison: typical Localsearch or Wix pages land at 40–60. Faster pages rank better — and lose fewer visitors.",
     "groups": {
+      "culture": "Culture & Heritage",
       "healthcare": "Healthcare",
       "publicTrust": "Public Trust",
       "trades": "Trades & B2B"
     },
     "cases": {
+      "schlemmer": {
+        "h3": "Schlemmer.org — Estate Oskar Schlemmer",
+        "lead": "A Bauhaus legacy, built for the web.",
+        "body": [
+          "Oskar Schlemmer (1888–1943) was one of the defining figures of the Bauhaus movement — painter, sculptor, choreographer of the Triadic Ballet. His estate needed a home that matched the weight of the work.",
+          "We built schlemmer.org as a living archive: catalogue raisonné, artwork authentication, and a family history section curated by his grandson C. Raman Schlemmer.",
+          "The challenge was balancing academic rigour with accessibility — making a century of art feel present, not preserved."
+        ],
+        "meta": "Archive, authentication & catalogue raisonné",
+        "url": "https://schlemmer.org",
+        "group": "culture",
+        "assetTodo": "public/images/work/schlemmer.webp — flattering screenshot from schlemmer.org"
+      },
       "schlafzahnmedizin": {
         "h3": "Schlafzahnmedizin Schaffhausen",
         "lead": "A specialty deserves more than a subpage.",
